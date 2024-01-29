@@ -21,4 +21,3 @@ echo "initiating terraform"
 cd ..
 cd terraform-sandbox
 terraform init
-export TF_LOG=INFO
