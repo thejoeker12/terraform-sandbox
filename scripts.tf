@@ -1,6 +1,6 @@
 
 resource "jamfpro_scripts" "scripts_0002_JL" {
-  name            = "[scpt]-add-or-TEST rename"
+  name            = "[scpt]-new-test-rename"
   script_contents = "echo 'Hello World!'"
   os_requirements = "13"
   priority        = "BEFORE"
@@ -10,4 +10,19 @@ resource "jamfpro_scripts" "scripts_0002_JL" {
   parameter5  = "group" // Target Type - Must be either "user" or "group"
   parameter6  = "someGroupName" // targetMembership
   parameter7  = "add" // Script Action - Must be either "add" or "remove"
+} 
+
+
+resource "jamfpro_scripts" "scripts_0003_JL" {
+  name            = "[scpt]-new-test-different name"
+  script_contents = "echo 'Hello World!'"
+  os_requirements = "13"
+  priority        = "BEFORE"
+  info            = "Adds target user or group to specified group membership, or removes said membership."
+  notes           = "Jamf Pro script parameters 4 -> 7"
+  parameter4  = "100" // targetID
+  parameter5  = "group" // Target Type - Must be either "user" or "group"
+  parameter6  = "someGroupName" // targetMembership
+  parameter7  = "add" // Script Action - Must be either "add" or "remove"
+  parameter10 = "this is a param"
 } 
