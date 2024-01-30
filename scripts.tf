@@ -1,6 +1,6 @@
 resource "jamfpro_scripts" "scripts_0003_JL" {
   name            = "[scpt]-JL-TEST"
-  script_contents = "echo 'Hello World!!'"
+  script_contents = "echo 'Hello World!'"
   os_requirements = "13"
   priority        = "BEFORE"
   info            = "Adds target user or group to specified group membership, or removes said membership."

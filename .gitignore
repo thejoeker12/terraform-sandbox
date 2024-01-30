@@ -4,3 +4,4 @@ clientauth.json
 .DS_Store
 .terraform.lock.hcl
 .terraform*
+temp.text
