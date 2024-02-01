@@ -20,7 +20,7 @@ provider "jamfpro" {
   instance_name = local.config.instanceName
   client_id     = local.config.clientId
   client_secret = local.config.clientSecret
-  log_level     = "debug" # or "debug", "info", "none" depending on the desired verbosity of the http client
+  log_level     = "none" # or "debug", "info", "none" depending on the desired verbosity of the http client
 }
 
 
