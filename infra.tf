@@ -13,12 +13,10 @@
 # } 
 
 
-# resource "jamfpro_departments" "the_name" {
-# count = 100 
-# name = "Test Department" 
-# }
+resource "jamfpro_departments" "the_name" {
+name = "Test Department" 
+}
 
 # resource "jamfpro_departments" "the_other_name" {
-# count = 100 
 # name = "Test Department2" 
 # }
