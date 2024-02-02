@@ -1,5 +1,5 @@
 
 resource "jamfpro_byoprofiles" "test" {
-    name = "Test Profile" 
+    name = "Test Profile"
 
 }
