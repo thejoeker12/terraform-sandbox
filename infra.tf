@@ -1,5 +1,5 @@
 
 resource "jamfpro_departments" "test2" {
-    name = "TEST DEpartment 1 "
+    name = "Test Dept"
 
 }
