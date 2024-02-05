@@ -1,5 +1,5 @@
 
-resource "jamfpro_byoprofiles" "test" {
-    name = "Test Profile"
+resource "jamfpro_departments" "test2" {
+    name = "TEST DEpartment 1 "
 
 }
