@@ -1,5 +1,4 @@
-
-resource "jamfpro_departments" "test2" {
-    name = "Test Dept 1"
+resource "jamfpro_macos_configuration_profiles" "NewName" {
+    name = "This is the name"
 
 }
