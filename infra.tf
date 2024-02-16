@@ -4,18 +4,20 @@ resource "jamfpro_macos_configuration_profile" "Scope_Test" {
     #     id = 661
     #     name = "jl_test"
     # }
-    category {
-       id = 5
-       name = "Applications"
-    }
-    # scope {
-    #     computers {
-    #         id = [
-    #             17,
-    #             18,
-    #             14,
-    #             16
-    #         ]
-    #     }
+    # category {
+    #    id = 5
+    #    name = "Applications"
     # }
+    scope {
+        computers {
+            id = [
+                17,
+                14,
+                15,
+                18,
+                16,
+                10000
+            ]
+        }
+    }
 }
