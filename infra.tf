@@ -1,23 +1,22 @@
+
+
 resource "jamfpro_macos_configuration_profile" "Scope_Test" {
     name = "Scope Test config profile"
-    # site {
-    #     id = 661
-    #     name = "jl_test"
-    # }
-    # category {
-    #    id = 5
-    #    name = "Applications"
-    # }
+    category {
+       id = 5
+       name = "Applications"
+    }
+    description = "This is the description of the configuration profile"
+    user_removeable = false
+    level = "User"
     scope {
         computers {
-            id = [
-                17,
-                14,
-                15,
-                18,
-                16,
-                10000
-            ]
+          id = [
+            15,
+            18,
+            17
+          ]
         }
     }
+
 }
