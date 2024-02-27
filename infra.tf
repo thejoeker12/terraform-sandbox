@@ -1,5 +1,4 @@
 
-
 resource "jamfpro_macos_configuration_profile" "Scope_Test" {
     name = "Scope Test config profile"
     category {
@@ -11,11 +10,11 @@ resource "jamfpro_macos_configuration_profile" "Scope_Test" {
     level = "User"
     scope {
         computers {
-          id = [
+          id = sort([
             15,
             18,
             17
-          ]
+          ])
         }
     }
 
