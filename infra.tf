@@ -1,8 +1,10 @@
 resource "jamfpro_macos_configuration_profile" "Scope_Test" {
-    name = "Scope Test config profile"
+    name = "Resource Scope Testing 1"
+    category {
+        id = 5
+        name = "Applications"
+    }
     scope {
-        computers {
-            id = sort([15, 14])
-        }
+        all_computers = false
     }
 }
