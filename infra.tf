@@ -1,9 +1,10 @@
 
 resource "jamfpro_macos_configuration_profile" "Scope_Test" {
-  name = "Resource Scope Testing 5"
+  name                = "Resource Testing"
+  distribution_method = "Install Automatically"
+  payload = file("payload.mobileconfig")
   category {
-    id   = 5
-    name = "Applications"
+    id = -1
   }
   scope {
     all_computers      = false
@@ -11,14 +12,9 @@ resource "jamfpro_macos_configuration_profile" "Scope_Test" {
     computer_group_ids = sort([53])
     jss_user_ids       = [4]
     jss_user_group_ids = [4]
-    department_ids     = [27653]
+
     exclusions {
-      building_ids = [1332]
-    }
-  }
-  self_service {
-    self_service_categories {
-      id = [12]
+      department_ids     = [27653]
     }
   }
 }
