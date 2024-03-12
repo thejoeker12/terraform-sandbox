@@ -1,6 +1,6 @@
 
-resource "jamfpro_macos_configuration_profile" "Scope_Test" {
-  name                = "Resource Testing"
+resource "jamfpro_macos_configuration_profile" "Scope_Test2" {
+  name                = "Resource Testing-test"
   distribution_method = "Install Automatically"
   payload = file("payload.mobileconfig")
   category {
@@ -18,3 +18,7 @@ resource "jamfpro_macos_configuration_profile" "Scope_Test" {
     }
   }
 }
+
+# resource "jamfpro_department" "testdept" {
+#   name = "the name"
+# }
