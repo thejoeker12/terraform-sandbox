@@ -1,5 +1,5 @@
 data "local_file" "config" {
-  filename = "clientauth.json"
+  filename = "clientauth.jsona"
 }
 
 locals {
