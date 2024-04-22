@@ -1,5 +1,5 @@
 data "local_file" "config" {
-  filename = "clientauth.jsona"
+  filename = "clientauth.json"
 }
 
 locals {
@@ -20,7 +20,14 @@ provider "jamfpro" {
   instance_name = local.config.instanceName
   client_id     = local.config.clientId
   client_secret = local.config.clientSecret
-  log_level     = "debug" # or "debug", "info", "none" depending on the desired verbosity of the http client
+  log_level     = "debug"
+  log_output_format = "console"
+  log_console_separator = "-"
+  hide_sensitive_data = true
+  max_retry_attempts = 2
+  enable_dynamic_rate_limiting = false
+  max_concurrent_requests = 1
+  enable_cookie_jar = true
 }
 
 
