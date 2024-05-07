@@ -1,0 +1,1 @@
+python3 policy_deleter.py
