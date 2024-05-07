@@ -7,7 +7,7 @@ resource "jamfpro_policy" "policy_testing" {
     }
     scope {
       all_computers = false
-      computer_ids = sort([15])
+      computer_ids = sort([15, 16])
     }
 }
 
