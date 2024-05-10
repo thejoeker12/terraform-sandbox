@@ -5,3 +5,4 @@ clientauth.json
 .terraform.lock.hcl
 .terraform*
 temp.text
+policy_name.txt

@@ -27,8 +27,11 @@ provider "jamfpro" {
   max_retry_attempts = 2
   enable_dynamic_rate_limiting = false
   max_concurrent_requests = 1
-  enable_cookie_jar = true
+  # enable_cookie_jar = true
   custom_timeout = 10
+  custom_cookies = {
+    "jpro-ingress": "497ab3aaa537e4fe"
+  }
 }
 
 
