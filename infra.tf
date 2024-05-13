@@ -9,13 +9,10 @@ resource "jamfpro_policy" "policy_testing" {
     }
     scope {
       all_computers = false
-      computer_ids = sort([15, 16])
+      all_jss_users = true
+      # computer_ids = sort([15, 16])
       # computer_group_ids = sort([78])
-      department_ids = [37287]
-      exclusions {
-        computer_ids = sort([17])
-        computer_group_ids = [ 78 ]
-      }
+      # department_ids = [37287]
     }
 }
 
