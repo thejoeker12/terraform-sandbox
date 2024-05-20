@@ -30,9 +30,18 @@ resource "jamfpro_policy" "policy_testing" {
     packages {
       id = 232
     }
-    # packages {
-    #   id = 233
-    # }
+    packages {
+      id = 233
+    }
+
+    scripts {
+      id = 7486
+    }
+
+    scripts {
+      id = 7268
+      priority = "Before"
+    }
     
   }
 

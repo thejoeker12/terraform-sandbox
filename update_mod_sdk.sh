@@ -1,5 +1,5 @@
 cd ../terraform-provider-jamfpro
 go clean --cache
-go get github.com/deploymenttheory/go-api-sdk-jamfpro@main
+GOPROXY=direct go get -u github.com/deploymenttheory/go-api-sdk-jamfpro
 go mod tidy
 cd ../terraform-sandbox
