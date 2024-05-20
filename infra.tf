@@ -26,17 +26,15 @@ resource "jamfpro_policy" "policy_testing" {
       feature_on_main_page = true
     }
 
-    payloads {
-      packages {
-        package {
-          id = 232
-        }
-        package {
-          id = 233
-        }
-      }
+  payloads {
+    packages {
+      id = 232
     }
+    # packages {
+    #   id = 233
+    # }
+    
+  }
 
-  
 }
 

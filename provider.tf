@@ -21,7 +21,7 @@ provider "jamfpro" {
   client_id     = local.config.clientId
   client_secret = local.config.clientSecret
   log_level     = "debug"
-  log_output_format = "console"
+  # log_output_format = "console"
   log_console_separator = "-"
   hide_sensitive_data = true
   max_retry_attempts = 2
