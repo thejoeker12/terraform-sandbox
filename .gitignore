@@ -6,3 +6,4 @@ clientauth.json
 .terraform*
 temp.text
 policy_name.txt
+logs

@@ -1,15 +1,15 @@
 
 resource "jamfpro_policy" "policy_testing" {
     name = file("policy_name.txt")
-    enabled = false
+    enabled = true
     trigger_checkin = true
-    # frequency = "Once every day"
+    frequency = "Once every day"
     category {
       id = 5
     }
     scope {
       all_computers = false
-      all_jss_users = true
+      all_jss_users = false
       computer_ids = sort([15, 16])
       department_ids = [37287]
       exclusions {
@@ -29,19 +29,28 @@ resource "jamfpro_policy" "policy_testing" {
   payloads {
     packages {
       id = 232
+      fill_existing_user_template = true
     }
     packages {
       id = 233
+    }
+
+
+    scripts {
+      id = 7268
+      priority = "Before"
     }
 
     scripts {
       id = 7486
     }
 
-    scripts {
-      id = 7268
-      priority = "Before"
-    }
+
+
+
+
+
+
     
   }
 

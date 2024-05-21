@@ -28,10 +28,11 @@ provider "jamfpro" {
   enable_dynamic_rate_limiting = false
   max_concurrent_requests = 1
   enable_cookie_jar = true
+  log_export_path = "logs"
   custom_timeout = 10
-  # custom_cookies = {
-  #   "jpro-ingress": "497ab3aaa537e4fe"
-  # }
+  custom_cookies = {
+    "jpro-ingress": "CHEESE"
+  }
 }
 
 
