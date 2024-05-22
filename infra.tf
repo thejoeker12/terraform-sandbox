@@ -48,33 +48,28 @@
 
 # }
 
-resource "jamfpro_computer_group" "smart_example" {
-  name = "Example Smart Computer Group"
+resource "jamfpro_computer_group" "differe2ance" {
+  name = "Example Smart Computer Group 4"
   is_smart = true  # Set to true if the group is a Smart group, otherwise set to false
 
   # Optional: Define criteria for Smart groups
-  criteria {
-    name          = "Criterion Name #1"
-    priority      = 1
-    and_or        = "and"  # or "or", defaults to "and" if not provided
-    search_type   = "is"   # or any other supported search type
-    value         = "Criterion Value"
-    opening_paren = false  # true or false, defaults to false if not provided
-    closing_paren = false  # true or false, defaults to false if not provided
-  }
-
-  criteria {
-    name          = "Criterion Name #n+1 etc"
-    priority      = 1
-    and_or        = "and"  # or "or", defaults to "and" if not provided
-    search_type   = "is"   # or any other supported search type
-    value         = "Criterion Value"
-    opening_paren = false  # true or false, defaults to false if not provided
-    closing_paren = false  # true or false, defaults to false if not provided
-  }
-
-  # computers {
-  #   id = 16
+  # criteria {
+  #   name          = "Criterion Name #1"
+  #   priority      = 1
+  #   and_or        = "and"  # or "or", defaults to "and" if not provided
+  #   search_type   = "is"   # or any other supported search type
+  #   value         = "Criterion Value"
+  #   opening_paren = false  # true or false, defaults to false if not provided
+  #   closing_paren = false  # true or false, defaults to false if not provided
   # }
 
+  criteria {
+    name          = "Last Inventory Update"
+    priority      = 0
+    and_or        = "and"  # or "or", defaults to "and" if not provided
+    search_type   = "is"   # or any other supported search type
+    value         = "Criterion Value"
+    opening_paren = false  # true or false, defaults to false if not provided
+    closing_paren = false  # true or false, defaults to false if not provided
+  }
 }
