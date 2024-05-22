@@ -20,7 +20,7 @@ provider "jamfpro" {
   instance_name = local.config.instanceName
   client_id     = local.config.clientId
   client_secret = local.config.clientSecret
-  log_level     = "debug"
+  log_level     = "info"
   # log_output_format = "console"
   log_console_separator = "-"
   hide_sensitive_data = true
