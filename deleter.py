@@ -1,9 +1,11 @@
 import sys
 sys.path.append("/Users/joseph/github/jamfpi")
 
+# from ..jamfpi import jamfpi
 import jamfpi
 from pycookiecheat import chrome_cookies
 import logging
+from pprint import pprint
 
 
 def getCurrentIngressCookie():
@@ -13,6 +15,7 @@ def getCurrentIngressCookie():
         return ingress_cookie
     
     raise Exception("No cookies found")
+
 
 def new_jamf_client() -> jamfpi.JamfTenant:
     """Returns new jamf client using auth from file """
@@ -29,9 +32,7 @@ def new_jamf_client() -> jamfpi.JamfTenant:
     return client
 
 
-EXCLUDED = ["1029"]
-def delete_all(client: jamfpi.JamfTenant):
-    """Deletes all policies from jamf instance"""
+def delete_all_policies(client: jamfpi.JamfTenant, exclude):
     all_policies = client.classic.policies.get_all()
 
     if all_policies.ok:
@@ -40,13 +41,40 @@ def delete_all(client: jamfpi.JamfTenant):
         raise Exception("problem")
     
     for p in all_json:
-        if str(p["id"]) not in EXCLUDED:
+        if str(p["id"]) not in exclude:
             delete = client.classic.policies.delete_by_id(p["id"])
             if delete.ok:
                 print(f"Deleted {p['id']} successfully")
 
 
+def delete_all_computer_groups(client: jamfpi.JamfTenant, exclude: list):
+    all_resources = client.classic.computergroups.get_all()
+
+    if all_resources.ok:
+        resource_json = all_resources.json()["computer_groups"]
+    else:
+        raise Exception("problem")
+    
+    for i in resource_json:
+        if str(i["id"]) not in exclude:
+            delete = client.classic.computergroups.delete_by_id(i["id"])
+            if delete.ok:
+                print(f"Deleted {i['id']} successfully")
+            else:
+                print(f"problem with {i['id']}, skipping...")
+
+
+def execute(client):
+    excluded_policies = []
+    excluded_computer_groups = ["1", "2"]
+    print("deleting computer groups...")
+    delete_all_computer_groups(client, excluded_computer_groups)
+    print("deleting policies...")
+    delete_all_policies(client, excluded_policies)
+    print("complete")
+
 def main():
-    delete_all(new_jamf_client())
+    client = new_jamf_client()
+    execute(client)
 
 main()

@@ -1,5 +1,5 @@
-echo "Deleting policies..."
-sh clean_policies.sh
+echo "executing python script..."
+python3 deleter.py
 echo "deleting state..."
 sh del_state.sh
 echo "setting new name..."
