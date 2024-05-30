@@ -21,7 +21,7 @@ provider "jamfpro" {
   client_id     = local.config.clientId
   client_secret = local.config.clientSecret
   log_level     = "info"
-  # log_output_format = "console"
+  log_output_format = "console"
   log_console_separator = "-"
   hide_sensitive_data = true
   max_retry_attempts = 2
@@ -30,9 +30,6 @@ provider "jamfpro" {
   enable_cookie_jar = true
   log_export_path = "logs"
   custom_timeout = 10
-  custom_cookies = {
-    "jpro-ingress": "CHEESE"
-  }
 }
 
 

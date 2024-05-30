@@ -1,5 +1,5 @@
 import sys
-sys.path.append("/Users/joseph/github/jamfpi")
+sys.path.append("/Users/joseph/Github/jamfpi")
 
 # from ..jamfpi import jamfpi
 import jamfpi
