@@ -14,4 +14,4 @@ GOPROXY=direct go get -u github.com/deploymenttheory/go-api-http-client@dev-jl-v
 go mod tidy
 echo "sdk modules update complete"
 
-cd ../terraform-
+cd ../terraform-sandbox
