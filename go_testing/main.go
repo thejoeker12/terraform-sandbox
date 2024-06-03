@@ -31,7 +31,7 @@ func main() {
 		TotalRetryDuration:        10 * time.Minute,
 		FollowRedirects:           false,
 	}
-	client, err := jamfpro.BuildClient(clientConfig, false)
+	client, err := httpclient.BuildClient(clientConfig, false)
 	if err != nil {
 		log.Fatalf("Failed to initialize Jamf Pro client: %v", err)
 	}
