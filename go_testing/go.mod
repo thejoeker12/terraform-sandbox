@@ -5,8 +5,8 @@ go 1.22.2
 toolchain go1.22.3
 
 require (
-	github.com/deploymenttheory/go-api-http-client v0.1.43-0.20240604111343-966b6ed62102
-	github.com/deploymenttheory/go-api-http-client-integration-jamfpro v0.0.0-20240604111321-d1bb4ed8ec3d
+	github.com/deploymenttheory/go-api-http-client v0.1.43-0.20240604112530-ecd067b8292e
+	github.com/deploymenttheory/go-api-http-client-integration-jamfpro v0.0.0-20240604112229-77641fe2ca3d
 	github.com/deploymenttheory/go-api-sdk-jamfpro v1.6.14-0.20240604083834-975ceaa722fa
 )
 

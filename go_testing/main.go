@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"log"
 	"os"
 	"time"
 
@@ -12,6 +11,7 @@ import (
 	"github.com/deploymenttheory/go-api-http-client/httpclient"
 	"github.com/deploymenttheory/go-api-http-client/logger"
 	"github.com/deploymenttheory/go-api-sdk-jamfpro/sdk/jamfpro"
+	"go.uber.org/zap"
 )
 
 type creds struct {
@@ -34,15 +34,17 @@ func main() {
 	var Creds creds
 	_ = json.Unmarshal(byteFile, &Creds)
 
-	Logger := logger.BuildLogger(logger.LogLevelDebug, "pretty", "	", "", false)
+	log := logger.BuildLogger(logger.LogLevelDebug, "pretty", "	", "", false)
+	log.Debug("test")
+	fmt.Printf("%+v", log)
 
 	integration := &jamfprointegration.Integration{
-		BaseDomain:           "lbgsandbox.jamfcloud.com",
+		BaseDomain:           "https://lbgsandbox.jamfcloud.com",
 		InstanceName:         "lbgsandbox",
 		ClientId:             Creds.Cid,
 		ClientSecret:         Creds.Cs,
 		AuthMethodDescriptor: "oauth2",
-		Logger:               Logger,
+		Logger:               log,
 	}
 
 	clientConfig := httpclient.ClientConfig{
@@ -64,7 +66,7 @@ func main() {
 
 	baseClient, err := httpclient.BuildClient(clientConfig, false)
 	if err != nil {
-		log.Fatalf("Failed to initialize Jamf Pro client: %v", err)
+		log.Debug("Failed to initialize Jamf Pro client")
 	}
 
 	jamfClient := jamfpro.Client{
@@ -85,7 +87,7 @@ func main() {
 	// Create the building
 	createdBuilding, err := jamfClient.CreateBuilding(newBuilding)
 	if err != nil {
-		log.Fatalf("Error creating building: %v", err)
+		log.Debug("Error creating building:", zap.String("body:", fmt.Sprintf("%v", err)))
 	}
 
 	// Print the details of the created building
