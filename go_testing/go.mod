@@ -5,9 +5,10 @@ go 1.22.2
 toolchain go1.22.3
 
 require (
-	github.com/deploymenttheory/go-api-http-client v0.1.43-0.20240604112530-ecd067b8292e
-	github.com/deploymenttheory/go-api-http-client-integration-jamfpro v0.0.0-20240604112229-77641fe2ca3d
+	github.com/deploymenttheory/go-api-http-client v0.1.43-0.20240604145504-0f92e3b4f7da
+	github.com/deploymenttheory/go-api-http-client-integration-jamfpro v0.0.0-20240604151731-65b617f74f65
 	github.com/deploymenttheory/go-api-sdk-jamfpro v1.6.14-0.20240604083834-975ceaa722fa
+	go.uber.org/zap v1.27.0
 )
 
 require (
@@ -37,7 +38,6 @@ require (
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
-	go.uber.org/zap v1.27.0 // indirect
 	golang.org/x/net v0.25.0 // indirect
-	golang.org/x/text v0.15.0 // indirect
+	golang.org/x/text v0.16.0 // indirect
 )

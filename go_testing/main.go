@@ -35,8 +35,6 @@ func main() {
 	_ = json.Unmarshal(byteFile, &Creds)
 
 	log := logger.BuildLogger(logger.LogLevelDebug, "pretty", "	", "", false)
-	log.Debug("test")
-	fmt.Printf("%+v", log)
 
 	integration := &jamfprointegration.Integration{
 		BaseDomain:           "https://lbgsandbox.jamfcloud.com",
@@ -58,7 +56,7 @@ func main() {
 		MaxRetryAttempts:          5,
 		EnableDynamicRateLimiting: true,
 		CustomTimeout:             5 * time.Second,
-		TokenRefreshBufferPeriod:  5 * time.Second,
+		TokenRefreshBufferPeriod:  1 * time.Minute,
 		TotalRetryDuration:        10 * time.Minute,
 		FollowRedirects:           false,
 		MaxConcurrentRequests:     1,
