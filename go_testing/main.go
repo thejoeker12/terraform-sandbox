@@ -10,6 +10,7 @@ import (
 
 	"github.com/deploymenttheory/go-api-http-client-integration-jamfpro/jamfprointegration"
 	"github.com/deploymenttheory/go-api-http-client/httpclient"
+	"github.com/deploymenttheory/go-api-http-client/logger"
 	"github.com/deploymenttheory/go-api-sdk-jamfpro/sdk/jamfpro"
 )
 
@@ -33,12 +34,15 @@ func main() {
 	var Creds creds
 	_ = json.Unmarshal(byteFile, &Creds)
 
+	Logger := logger.BuildLogger(logger.LogLevelDebug, "pretty", "	", "", false)
+
 	integration := &jamfprointegration.Integration{
 		BaseDomain:           "lbgsandbox.jamfcloud.com",
 		InstanceName:         "lbgsandbox",
 		ClientId:             Creds.Cid,
 		ClientSecret:         Creds.Cs,
 		AuthMethodDescriptor: "oauth2",
+		Logger:               Logger,
 	}
 
 	clientConfig := httpclient.ClientConfig{

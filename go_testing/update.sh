@@ -1,4 +1,4 @@
-
+clear
 echo "updating sdk..."
 GOPROXY=direct go get -u "github.com/deploymenttheory/go-api-sdk-jamfpro@jl-dev"
 echo "updating integration..."
