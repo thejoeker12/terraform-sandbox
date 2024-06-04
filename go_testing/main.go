@@ -14,13 +14,13 @@ func main() {
 	// Define the path to the JSON configuration file
 	// Initialize the Jamf Pro client with the HTTP client configuration
 
-	inte := jamfprointegration.Integration{}
+	integration := &jamfprointegration.Integration{}
 
 	clientConfig := httpclient.ClientConfig{
 		LogLevel:                  "LogLevelDebug",
 		LogOutputFormat:           "pretty",
 		LogConsoleSeparator:       "   ",
-		Integration:               inte,
+		Integration:               integration,
 		ExportLogs:                false,
 		HideSensitiveData:         false,
 		CookieJarEnabled:          true,
@@ -30,10 +30,15 @@ func main() {
 		TokenRefreshBufferPeriod:  5 * time.Second,
 		TotalRetryDuration:        10 * time.Minute,
 		FollowRedirects:           false,
+		MaxConcurrentRequests:     1,
 	}
-	client, err := httpclient.BuildClient(clientConfig, false)
+	baseClient, err := httpclient.BuildClient(clientConfig, false)
 	if err != nil {
 		log.Fatalf("Failed to initialize Jamf Pro client: %v", err)
+	}
+
+	jamfClient := jamfpro.Client{
+		HTTP: baseClient,
 	}
 
 	// Building details to be created
@@ -48,7 +53,7 @@ func main() {
 	}
 
 	// Create the building
-	createdBuilding, err := client.CreateBuilding(newBuilding)
+	createdBuilding, err := jamfClient.CreateBuilding(newBuilding)
 	if err != nil {
 		log.Fatalf("Error creating building: %v", err)
 	}

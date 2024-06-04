@@ -5,8 +5,9 @@ go 1.22.2
 toolchain go1.22.3
 
 require (
-	github.com/deploymenttheory/go-api-http-client v0.1.43-0.20240603142132-2108676acbb3
-	github.com/deploymenttheory/go-api-sdk-jamfpro v1.6.15
+	github.com/deploymenttheory/go-api-http-client v0.1.43-0.20240604085934-428e2e962302
+	github.com/deploymenttheory/go-api-http-client-integration-jamfpro v0.0.0-20240604083510-3e74096f221f
+	github.com/deploymenttheory/go-api-sdk-jamfpro v1.6.14-0.20240604083834-975ceaa722fa
 )
 
 require (
@@ -31,7 +32,6 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/ssooidc v1.24.3 // indirect
 	github.com/aws/aws-sdk-go-v2/service/sts v1.28.10 // indirect
 	github.com/aws/smithy-go v1.20.2 // indirect
-	github.com/deploymenttheory/go-api-http-client-integration-jamfpro v0.0.0-20240603154053-78f88cb1ab00 // indirect
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
@@ -39,6 +39,5 @@ require (
 	go.uber.org/multierr v1.11.0 // indirect
 	go.uber.org/zap v1.27.0 // indirect
 	golang.org/x/net v0.25.0 // indirect
-	golang.org/x/sys v0.20.0 // indirect
 	golang.org/x/text v0.15.0 // indirect
 )
