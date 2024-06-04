@@ -1,8 +1,11 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
+	"io"
 	"log"
+	"os"
 	"time"
 
 	"github.com/deploymenttheory/go-api-http-client-integration-jamfpro/jamfprointegration"
@@ -10,11 +13,33 @@ import (
 	"github.com/deploymenttheory/go-api-sdk-jamfpro/sdk/jamfpro"
 )
 
+type creds struct {
+	Cid string `json:"clientId"`
+	Cs  string `json:"clientSecret"`
+}
+
 func main() {
 	// Define the path to the JSON configuration file
 	// Initialize the Jamf Pro client with the HTTP client configuration
 
-	integration := &jamfprointegration.Integration{}
+	credsFilePath := "/Users/joseph/github/terraform-sandbox/clientauth.json"
+	jsonFile, err := os.Open(credsFilePath)
+	if err != nil {
+		fmt.Println(err)
+	}
+	defer jsonFile.Close()
+
+	byteFile, _ := io.ReadAll(jsonFile)
+	var Creds creds
+	_ = json.Unmarshal(byteFile, &Creds)
+
+	integration := &jamfprointegration.Integration{
+		BaseDomain:           "lbgsandbox.jamfcloud.com",
+		InstanceName:         "lbgsandbox",
+		ClientId:             Creds.Cid,
+		ClientSecret:         Creds.Cs,
+		AuthMethodDescriptor: "oauth2",
+	}
 
 	clientConfig := httpclient.ClientConfig{
 		LogLevel:                  "LogLevelDebug",
@@ -32,6 +57,7 @@ func main() {
 		FollowRedirects:           false,
 		MaxConcurrentRequests:     1,
 	}
+
 	baseClient, err := httpclient.BuildClient(clientConfig, false)
 	if err != nil {
 		log.Fatalf("Failed to initialize Jamf Pro client: %v", err)
