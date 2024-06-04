@@ -51,6 +51,8 @@ github.com/deploymenttheory/go-api-http-client v0.1.43-0.20240604144957-4747da8e
 github.com/deploymenttheory/go-api-http-client v0.1.43-0.20240604144957-4747da8eb898/go.mod h1:a50wmpzDKITI2xAF3mg0JY/JojnBfvCt7y3IPROkPj4=
 github.com/deploymenttheory/go-api-http-client v0.1.43-0.20240604145504-0f92e3b4f7da h1:rMJMtn5k8DE/iN9kAwWb6RDg4wT1xwAKw8Py2zSByRY=
 github.com/deploymenttheory/go-api-http-client v0.1.43-0.20240604145504-0f92e3b4f7da/go.mod h1:a50wmpzDKITI2xAF3mg0JY/JojnBfvCt7y3IPROkPj4=
+github.com/deploymenttheory/go-api-http-client v0.1.43-0.20240604152213-64073c300aca h1:17A6Ctv2zpKRXkBI8pCJ04/J9Ib0lAi1DL4iOjVp+Ac=
+github.com/deploymenttheory/go-api-http-client v0.1.43-0.20240604152213-64073c300aca/go.mod h1:a50wmpzDKITI2xAF3mg0JY/JojnBfvCt7y3IPROkPj4=
 github.com/deploymenttheory/go-api-http-client-integration-jamfpro v0.0.0-20240604125452-187088a9fb1e h1:wCox7H25xlHUtKeJTd8H8QqJHBlta8oUbW6Nu3RKTwk=
 github.com/deploymenttheory/go-api-http-client-integration-jamfpro v0.0.0-20240604125452-187088a9fb1e/go.mod h1:57h5+i4v167pAEg6fLwJ0r0obHguEh15v2fNasqUl7Y=
 github.com/deploymenttheory/go-api-http-client-integration-jamfpro v0.0.0-20240604143339-7a5401a7584e h1:x9BhBXsLUQqgScGm1epXwvH2K9I+I1NX5+G8JWY3BxQ=
@@ -83,6 +85,8 @@ github.com/deploymenttheory/go-api-http-client-integration-jamfpro v0.0.0-202406
 github.com/deploymenttheory/go-api-http-client-integration-jamfpro v0.0.0-20240604151329-6e0d9535ce88/go.mod h1:HtWjuOyC7PoMv3HrpT4OBUNBOVg+Pf6bSjLVm98vU0A=
 github.com/deploymenttheory/go-api-http-client-integration-jamfpro v0.0.0-20240604151731-65b617f74f65 h1:cx8cNBBk1ZeySDKtha4qux371TAbXsVWrXAC9x4ybUI=
 github.com/deploymenttheory/go-api-http-client-integration-jamfpro v0.0.0-20240604151731-65b617f74f65/go.mod h1:HtWjuOyC7PoMv3HrpT4OBUNBOVg+Pf6bSjLVm98vU0A=
+github.com/deploymenttheory/go-api-http-client-integration-jamfpro v0.0.0-20240604152004-085bfdb10f94 h1:I/1OzAPx8X64W2k4Jc65E5tWcJUTRAUeTwInCAKgVMM=
+github.com/deploymenttheory/go-api-http-client-integration-jamfpro v0.0.0-20240604152004-085bfdb10f94/go.mod h1:HtWjuOyC7PoMv3HrpT4OBUNBOVg+Pf6bSjLVm98vU0A=
 github.com/deploymenttheory/go-api-sdk-jamfpro v1.6.14-0.20240604083834-975ceaa722fa h1:wUyCfU1B+a4eAYFXXwAo2HzyrvbxSdvOWDsAoDo+ORQ=
 github.com/deploymenttheory/go-api-sdk-jamfpro v1.6.14-0.20240604083834-975ceaa722fa/go.mod h1:j1okaB4JE4aY/ardCq5fvVIdbL1TTuKQpsP+I2MJdjI=
 github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da h1:oI5xCqsCo564l8iNU+DwB5epxmsaqB+rhGL0m5jtYqE=

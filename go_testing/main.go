@@ -46,7 +46,7 @@ func main() {
 	}
 
 	clientConfig := httpclient.ClientConfig{
-		LogLevel:                  "LogLevelDebug",
+		LogLevel:                  "LogLevelInfo",
 		LogOutputFormat:           "pretty",
 		LogConsoleSeparator:       "   ",
 		Integration:               integration,
@@ -73,7 +73,7 @@ func main() {
 
 	// Building details to be created
 	newBuilding := &jamfpro.ResourceBuilding{
-		Name:           "Apple Park",
+		Name:           "Apple Park-5",
 		StreetAddress1: "The McIntosh Tree",
 		StreetAddress2: "One Apple Park Way",
 		City:           "Cupertino",
