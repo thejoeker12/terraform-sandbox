@@ -36,14 +36,30 @@ func main() {
 
 	log := logger.BuildLogger(logger.LogLevelDebug, "pretty", "	", "", false)
 
-	newIntegration := jamfprointegration.BuildIntegrationWithOAuth(
+	bufferPeriod := 10 * time.Second
+
+	newIntegration, err := jamfprointegration.BuildIntegrationWithOAuth(
 		"https://lbgsandbox.jamfcloud.com",
 		"lbgsandbox",
 		log,
-		5*time.Minute,
+		bufferPeriod,
 		Creds.Cid,
 		Creds.Cs,
 	)
+
+	// newIntegration, err := jamfprointegration.BuildIntegrationWithBasicAuth(
+	// 	"https://lbgsandbox.jamfcloud.com",
+	// 	"lbgsandbox",
+	// 	log,
+	// 	bufferPeriod,
+	// 	"basicAuthTest",
+	// 	"",
+	// )
+
+	if err != nil {
+		fmt.Println(fmt.Errorf("Error: %v", err))
+		return
+	}
 
 	clientConfig := httpclient.ClientConfig{
 		LogLevel:                  "LogLevelDebug",
@@ -55,7 +71,7 @@ func main() {
 		MaxRetryAttempts:          5,
 		EnableDynamicRateLimiting: true,
 		CustomTimeout:             5 * time.Second,
-		TokenRefreshBufferPeriod:  1 * time.Minute,
+		TokenRefreshBufferPeriod:  bufferPeriod,
 		TotalRetryDuration:        10 * time.Minute,
 		FollowRedirects:           false,
 		MaxConcurrentRequests:     1,
@@ -74,7 +90,7 @@ func main() {
 
 	// Building details to be created
 	newBuilding = &jamfpro.ResourceBuilding{
-		Name:           "Apple Park-111",
+		Name:           "Apple Park-11121",
 		StreetAddress1: "The McIntosh Tree",
 		StreetAddress2: "One Apple Park Way",
 		City:           "Cupertino",

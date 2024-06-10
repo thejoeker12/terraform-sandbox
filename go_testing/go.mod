@@ -6,7 +6,7 @@ toolchain go1.22.3
 
 require (
 	github.com/deploymenttheory/go-api-http-client v0.1.43-0.20240610101509-1dcd3ec33de9
-	github.com/deploymenttheory/go-api-http-client-integration-jamfpro v0.0.0-20240610114904-a8b598ad55f7
+	github.com/deploymenttheory/go-api-http-client-integration-jamfpro v0.0.0-20240610134117-47116ba3f918
 	github.com/deploymenttheory/go-api-sdk-jamfpro v1.7.2-0.20240610104259-0b9b31d08ba9
 	go.uber.org/zap v1.27.0
 )
