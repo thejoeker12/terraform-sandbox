@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"net/http"
 	"os"
 	"time"
 
@@ -34,7 +35,7 @@ func main() {
 	var Creds creds
 	_ = json.Unmarshal(byteFile, &Creds)
 
-	log := logger.BuildLogger(logger.LogLevelDebug, "pretty", "	", "", false)
+	log := logger.BuildLogger(logger.LogLevelInfo, "pretty", "	", "", false)
 
 	bufferPeriod := 10 * time.Second
 
@@ -61,13 +62,25 @@ func main() {
 		return
 	}
 
+	var cookies []*http.Cookie
+
+	newCookie := http.Cookie{
+		Name:  "jpro-ingress",
+		Value: "fb0c93c7041044c2",
+		// Path:  "https://lbgsandbox.jamfcloud.com",
+	}
+
+	cookies = append(cookies, &newCookie)
+
+	fmt.Println(cookies)
+
 	clientConfig := httpclient.ClientConfig{
-		LogLevel:                  "LogLevelDebug",
-		LogOutputFormat:           "pretty",
-		LogConsoleSeparator:       "   ",
-		Integration:               newIntegration,
-		HideSensitiveData:         false,
-		CookieJarEnabled:          true,
+		LogLevel:            "LogLevelDebug",
+		LogOutputFormat:     "pretty",
+		LogConsoleSeparator: "   ",
+		Integration:         newIntegration,
+		HideSensitiveData:   false,
+		// CookieJarEnabled:          true,
 		MaxRetryAttempts:          5,
 		EnableDynamicRateLimiting: true,
 		CustomTimeout:             5 * time.Second,
@@ -75,6 +88,7 @@ func main() {
 		TotalRetryDuration:        10 * time.Minute,
 		FollowRedirects:           false,
 		MaxConcurrentRequests:     1,
+		CustomCookies:             cookies,
 	}
 
 	baseClient, err := httpclient.BuildClient(clientConfig, false)
@@ -90,7 +104,7 @@ func main() {
 
 	// Building details to be created
 	newBuilding = &jamfpro.ResourceBuilding{
-		Name:           "Apple Park-11121",
+		Name:           "Apple Park-1",
 		StreetAddress1: "The McIntosh Tree",
 		StreetAddress2: "One Apple Park Way",
 		City:           "Cupertino",
