@@ -36,21 +36,20 @@ func main() {
 
 	log := logger.BuildLogger(logger.LogLevelDebug, "pretty", "	", "", false)
 
-	integration := &jamfprointegration.Integration{
-		BaseDomain:           "https://lbgsandbox.jamfcloud.com",
-		InstanceName:         "lbgsandbox",
-		ClientId:             Creds.Cid,
-		ClientSecret:         Creds.Cs,
-		AuthMethodDescriptor: "oauth2",
-		Logger:               log,
-	}
+	newIntegration := jamfprointegration.BuildIntegrationWithOAuth(
+		"https://lbgsandbox.jamfcloud.com",
+		"lbgsandbox",
+		log,
+		5*time.Minute,
+		Creds.Cid,
+		Creds.Cs,
+	)
 
 	clientConfig := httpclient.ClientConfig{
-		LogLevel:                  "LogLevelInfo",
+		LogLevel:                  "LogLevelDebug",
 		LogOutputFormat:           "pretty",
 		LogConsoleSeparator:       "   ",
-		Integration:               integration,
-		ExportLogs:                false,
+		Integration:               newIntegration,
 		HideSensitiveData:         false,
 		CookieJarEnabled:          true,
 		MaxRetryAttempts:          5,
@@ -71,9 +70,11 @@ func main() {
 		HTTP: baseClient,
 	}
 
+	var newBuilding *jamfpro.ResourceBuilding
+
 	// Building details to be created
-	newBuilding := &jamfpro.ResourceBuilding{
-		Name:           "Apple Park-5",
+	newBuilding = &jamfpro.ResourceBuilding{
+		Name:           "Apple Park-111",
 		StreetAddress1: "The McIntosh Tree",
 		StreetAddress2: "One Apple Park Way",
 		City:           "Cupertino",
