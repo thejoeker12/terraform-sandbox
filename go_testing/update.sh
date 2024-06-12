@@ -13,8 +13,8 @@ GOPROXY=direct go get -u github.com/deploymenttheory/go-api-http-client-integrat
 
 # go run main.go
 
-# echo "updating sdk..."
-# GOPROXY=direct go get -u github.com/deploymenttheory/go-api-sdk-jamfpro@dev-jl-httpclientv2
+echo "updating sdk..."
+GOPROXY=direct go get -u github.com/deploymenttheory/go-api-sdk-jamfpro@dev-jl-httpclientv2
 
 echo "updating http client..."
 GOPROXY=direct go get -u github.com/deploymenttheory/go-api-http-client@dev-jl-version2
