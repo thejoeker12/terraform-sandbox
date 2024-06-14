@@ -2,8 +2,8 @@ echo "updating provider modules..."
 
 cd /Users/joseph/github/terraform-provider-jamfpro
 go clean --cache
-GOPROXY=direct go get -u github.com/deploymenttheory/go-api-sdk-jamfpro@latest
-GOPROXY=direct go get -u github.com/deploymenttheory/go-api-http-client@latest
+GOPROXY=direct go get -u github.com/deploymenttheory/go-api-sdk-jamfpro@dev-jl-httpclientv2
+GOPROXY=direct go get -u github.com/deploymenttheory/go-api-http-client@dev-jl-version2
 go mod tidy
 echo "provider module update complete"
 

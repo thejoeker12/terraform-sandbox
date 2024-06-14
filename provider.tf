@@ -16,24 +16,19 @@ terraform {
   }
 }
 
-provider "jamfpro" {
-  instance_name = local.config.instanceName
-  client_id     = local.config.clientId
-  client_secret = local.config.clientSecret
-  log_level     = "info"
-  log_output_format = "console"
-  log_console_separator = "-"
-  hide_sensitive_data = true
-  max_retry_attempts = 2
-  enable_dynamic_rate_limiting = false
-  max_concurrent_requests = 1
-  enable_cookie_jar = true
-  log_export_path = "logs"
-  custom_timeout = 10
+
+locals {
+  json_data = jsondecode(file("/Users/joseph/github/terraform-sandbox/clientauth.json"))
 }
 
 
-
+provider "jamfpro" {
+  instance_domain = "https://lbgsandbox.jamfcloud.com"
+  auth_method     = "oauth2"
+  client_id       = local.json_data.clientId
+  client_secret   = local.json_data.clientSecret
+  log_level       = "debug"
+}
 
 
 
