@@ -28,6 +28,10 @@ provider "jamfpro" {
   client_id       = local.json_data.clientId
   client_secret   = local.json_data.clientSecret
   log_level       = "debug"
+  custom_cookies {
+    name = "jpro-ingress"
+    value = "c07c442e6c87d1ef"
+  }
 }
 
 

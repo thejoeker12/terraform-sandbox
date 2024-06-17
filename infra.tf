@@ -29,7 +29,8 @@
 
 
 resource "jamfpro_category" "example_category_1" {
-  name = "tf-example-category-JLTEST2"
+  count = 100
+  name = "tf-example-category-${count.index}"
   priority = 1
 }
 
