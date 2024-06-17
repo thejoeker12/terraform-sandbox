@@ -28,9 +28,9 @@
 # }
 
 
-resource "jamfpro_category" "example_category_1" {
-  count = 100
-  name = "tf-example-category-${count.index}"
+resource "jamfpro_category" "category2" {
+  count = 2
+  name = "tf-example-category-locked-cookie-${count.index}"
   priority = 1
 }
 

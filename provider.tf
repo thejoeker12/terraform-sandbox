@@ -28,10 +28,12 @@ provider "jamfpro" {
   client_id       = local.json_data.clientId
   client_secret   = local.json_data.clientSecret
   log_level       = "debug"
-  custom_cookies {
-    name = "jpro-ingress"
-    value = "c07c442e6c87d1ef"
-  }
+  jamf_load_balancer_lock = true
+  max_concurrent_requests = 10
+  # custom_cookies {
+  #   name = "jpro-ingress"
+  #   value = "c07c442e6c87d1ef"
+  # }
 }
 
 
