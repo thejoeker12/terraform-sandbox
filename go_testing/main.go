@@ -1,15 +1,11 @@
 package main
 
-import (
-	"fmt"
-	"net/http"
-	"slices"
-)
+// region ignore
 
-type creds struct {
-	Cid string `json:"clientId"`
-	Cs  string `json:"clientSecret"`
-}
+// type creds struct {
+// 	Cid string `json:"clientId"`
+// 	Cs  string `json:"clientSecret"`
+// }
 
 // func main() {
 // 	// Define the path to the JSON configuration file
@@ -114,59 +110,61 @@ type creds struct {
 // 	fmt.Printf("Created Building: %+v\n", createdBuilding)
 // }
 
-func main() {
+// func main() {
 
-	count := 5
-	for i := 0; i < count; i++ {
-		list, err := getAllLoadBalancers("https://lbgsandbox.jamfcloud.com", 4, "jpro-ingress")
-		if err != nil {
-			fmt.Println(err)
-			return
-		}
-		target := chooseMostAlphabeticalString(list)
-		fmt.Println(target)
-	}
+// 	count := 5
+// 	for i := 0; i < count; i++ {
+// 		list, err := getAllLoadBalancers("https://lbgsandbox.jamfcloud.com", 4, "jpro-ingress")
+// 		if err != nil {
+// 			fmt.Println(err)
+// 			return
+// 		}
+// 		target := chooseMostAlphabeticalString(list)
+// 		fmt.Println(target)
+// 	}
 
-}
+// }
 
-func chooseMostAlphabeticalString(strings *[]string) string {
-	if len(*strings) == 0 {
-		return ""
-	}
+// func chooseMostAlphabeticalString(strings *[]string) string {
+// 	if len(*strings) == 0 {
+// 		return ""
+// 	}
 
-	mostAlphabeticalStr := (*strings)[0]
-	for _, str := range (*strings)[1:] {
-		if str < mostAlphabeticalStr {
-			mostAlphabeticalStr = str
-		}
-	}
+// 	mostAlphabeticalStr := (*strings)[0]
+// 	for _, str := range (*strings)[1:] {
+// 		if str < mostAlphabeticalStr {
+// 			mostAlphabeticalStr = str
+// 		}
+// 	}
 
-	return mostAlphabeticalStr
-}
+// 	return mostAlphabeticalStr
+// }
 
-func getAllLoadBalancers(urlString string, pollCount int, targetCookieName string) (*[]string, error) {
-	var cookiesList []*http.Cookie
-	var outList []string
-	for i := 0; i < pollCount; i++ {
-		resp, err := http.Get(urlString)
+// func getAllLoadBalancers(urlString string, pollCount int, targetCookieName string) (*[]string, error) {
+// 	var cookiesList []*http.Cookie
+// 	var outList []string
+// 	for i := 0; i < pollCount; i++ {
+// 		resp, err := http.Get(urlString)
 
-		respCookies := resp.Cookies()
+// 		respCookies := resp.Cookies()
 
-		for i, v := range respCookies {
-			if v.Name == targetCookieName {
-				cookiesList = append(cookiesList, respCookies[i])
-				outList = append(outList, v.Value)
-			}
-		}
+// 		for i, v := range respCookies {
+// 			if v.Name == targetCookieName {
+// 				cookiesList = append(cookiesList, respCookies[i])
+// 				outList = append(outList, v.Value)
+// 			}
+// 		}
 
-		if err != nil {
-			return nil, err
-		}
+// 		if err != nil {
+// 			return nil, err
+// 		}
 
-	}
+// 	}
 
-	slices.Sort(outList)
-	newList := slices.Compact(outList)
-	return &newList, nil
+// 	slices.Sort(outList)
+// 	newList := slices.Compact(outList)
+// 	return &newList, nil
 
-}
+// }
+
+// endregion
