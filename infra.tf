@@ -14,57 +14,56 @@
 # }
 
 
-# resource "jamfpro_category" "category2" {
-#   count = 1000
-#   name = "tf-example-category-locked-cookie2-${count.index}"
-#   priority = 1
-# }
-
-
-resource "jamfpro_policy" "policy_testing" {
-    count = 100
-    name = "policy-name-lock-test-${count.index}"
-    enabled = true
-    trigger_checkin = true
-    frequency = "Once every day"
-
-    category {
-      id = 5
-    }
-    
-    scope {
-      all_computers = false
-      all_jss_users = false
-      computer_ids = sort([14, 19])
-      department_ids = [37287]
-      exclusions {
-        computer_group_ids = sort([343])
-      }
-    }
-
-    self_service {
-      use_for_self_service = true
-      self_service_display_name = "New Self Service Name"
-      install_button_text = "NO"
-      self_service_description = "New self service description"
-      force_users_to_view_description = true
-      feature_on_main_page = true
-    }
-
-  payloads {
-    packages {
-      id = 264
-      fill_existing_user_template = true
-    }
-
-    scripts {
-      id = 7486
-      priority = "Before"
-    }
-
-    scripts {
-      id = 7484
-    }
-  }
-
+resource "jamfpro_category" "category2" {
+  count = 1
+  name = "tf-example-category-locked-cookie-${count.index}"
+  priority = 1
 }
+
+
+# resource "jamfpro_policy" "policy_testing" {
+#     count = 100
+#     name = "policy-name-lock-test-${count.index}"
+#     enabled = true
+#     trigger_checkin = true
+#     frequency = "Once every day"
+
+#     category {
+#       id = 5
+#     }
+    
+#     scope {
+#       all_computers = false
+#       all_jss_users = false
+#       computer_ids = sort([14, 19])
+#       department_ids = [37287]
+#       exclusions {
+#         computer_group_ids = sort([343])
+#       }
+#     }
+
+#     self_service {
+#       use_for_self_service = true
+#       self_service_display_name = "New Self Service Name"
+#       install_button_text = "NO"
+#       self_service_description = "New self service description"
+#       force_users_to_view_description = true
+#       feature_on_main_page = true
+#     }
+
+#   payloads {
+#     packages {
+#       id = 264
+#       fill_existing_user_template = true
+#     }
+
+#     scripts {
+#       id = 7486
+#       priority = "Before"
+#     }
+
+#     scripts {
+#       id = 7484
+#     }
+#   }
+# }

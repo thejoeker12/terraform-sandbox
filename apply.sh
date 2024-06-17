@@ -1,2 +1,2 @@
 clear
-TF_LOG=DEBUG terraform apply -auto-approve -parallelism=500
+TF_LOG=DEBUG terraform apply -auto-approve -parallelism=100
