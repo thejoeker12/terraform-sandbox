@@ -64,14 +64,32 @@ def delete_all_computer_groups(client: jamfpi.JamfTenant, exclude: list):
                 print(f"problem with {i['id']}, skipping...")
 
 
+def delete_all_categories(client: jamfpi.JamfTenant, exclude: list):
+    all_resources = client.classic.categories.get_all()
+
+    if all_resources.ok:
+        resource_json = all_resources.json()["categories"]
+    else:
+        raise Exception("problem")
+    
+    for i in resource_json:
+        if str(i["id"]) not in exclude:
+            delete = client.classic.categories.delete_by_id(i["id"])
+            if delete.ok:
+                print(f"Deleted {i['id']} successfully")
+            else:
+                print(f"problem with {i['id']}, skipping...{delete.text}")
+
+
 def execute(client):
-    excluded_policies = []
-    excluded_computer_groups = ["1", "2"]
-    print("deleting computer groups...")
-    delete_all_computer_groups(client, excluded_computer_groups)
-    print("deleting policies...")
-    delete_all_policies(client, excluded_policies)
-    print("complete")
+    # excluded_policies = []
+    # excluded_computer_groups = ["1", "2"]
+    # print("deleting computer groups...")
+    # delete_all_computer_groups(client, excluded_computer_groups)
+    # print("deleting policies...")
+    # delete_all_policies(client, excluded_policies)
+    # print("complete")
+    delete_all_categories(client, [5])
 
 def main():
     client = new_jamf_client()

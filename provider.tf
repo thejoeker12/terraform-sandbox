@@ -29,7 +29,7 @@ provider "jamfpro" {
   client_secret   = local.json_data.clientSecret
   log_level       = "debug"
   jamf_load_balancer_lock = true
-  max_concurrent_requests = 10
+  max_concurrent_requests = 1
   # custom_cookies {
   #   name = "jpro-ingress"
   #   value = "c07c442e6c87d1ef"
