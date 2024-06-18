@@ -14,11 +14,11 @@
 # }
 
 
-resource "jamfpro_category" "category2" {
-  count = 1
-  name = "tf-example-category-locked-cookie-${count.index}"
-  priority = 1
-}
+# resource "jamfpro_category" "category2" {
+#   count = 10
+#   name = "Category-jamf-${count.index}"
+#   priority = 1
+# }
 
 
 # resource "jamfpro_policy" "policy_testing" {
