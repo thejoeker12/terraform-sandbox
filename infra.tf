@@ -14,16 +14,30 @@
 # }
 
 
-# resource "jamfpro_category" "category2" {
-#   count = 50
-#   name = "category-home-test-${count.index}"
-#   priority = 1
+resource "jamfpro_category" "category" {
+  count = 25
+  name = "category-home-bob1-${count.index}"
+  priority = 1
+}
+
+
+# resource "jamfpro_script" "scripts_0001" {
+#   name            = "tf-example-script-fileupload"
+#   script_contents = "wEFewfwefwe"
+#   os_requirements = "13"
+#   priority        = "BEFORE"
+#   info            = "Adds target user or group to specified group membership, or removes said membership."
+#   notes           = "Jamf Pro script parameters 4 -> 7"
+#   parameter4  = "100" // targetID
+#   parameter5  = "group" // Target Type - Must be either "user" or "group"
+#   parameter6  = "someGroupName" // targetMembership
+#   parameter7  = "add" // Script Action - Must be either "add" or "remove"
 # }
 
 
 # resource "jamfpro_policy" "policy_testing" {
-#     count = 25
-#     name = "policy-home-new-${count.index}"
+#     count = 50
+#     name = "policy-home-new-call-${count.index}"
 #     enabled = true
 #     trigger_checkin = true
 #     frequency = "Once every day"
@@ -56,7 +70,7 @@
 #       id = 264
 #       fill_existing_user_template = true
 #     }
-#         scripts {
+#     scripts {
 #       id = 7484
 #     }
 

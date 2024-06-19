@@ -21,15 +21,15 @@ done
 
 TARGET_BRANCH_SDK="dev-jl-httpclientv2"
 TARGET_BRANCH_HTTP_CLIENT="dev-jl-version2"
-TARGET_BRANCH_INTEGRATION=""
+TARGET_BRANCH_INTEGRATION="0.0.1"
 
 ghRootLinkSdk="github.com/deploymenttheory/go-api-sdk-jamfpro"
 ghRootLinkHttpClient="github.com/deploymenttheory/go-api-http-client"
-ghRootLinkJproIntegration="github.com/deploymenttheory/go-api-http-client-integration-jamfpro"
+ghRootLinkJproIntegration="github.com/deploymenttheory/go-api-http-client-integrations/jamfpro/jamfprointegration"
 
 GH_SDK="$ghRootLinkSdk@$TARGET_BRANCH_SDK"
 GH_HTTP_CLIENT="$ghRootLinkHttpClient@$TARGET_BRANCH_HTTP_CLIENT"
-GH_INTEGRATION="$ghRootLinkJproIntegration"
+GH_INTEGRATION="$ghRootLinkJproIntegration@$TARGET_BRANCH_INTEGRATION"
 
 # Automated Commits
 
