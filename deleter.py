@@ -82,12 +82,12 @@ def delete_all_categories(client: jamfpi.JamfTenant, exclude: list):
 
 
 def execute(client):
-    # excluded_policies = []
+    excluded_policies = []
     # excluded_computer_groups = ["1", "2"]
     # print("deleting computer groups...")
     # delete_all_computer_groups(client, excluded_computer_groups)
     # print("deleting policies...")
-    # delete_all_policies(client, excluded_policies)
+    delete_all_policies(client, excluded_policies)
     # print("complete")
     delete_all_categories(client, [5])
 

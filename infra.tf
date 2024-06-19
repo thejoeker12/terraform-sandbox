@@ -15,15 +15,15 @@
 
 
 # resource "jamfpro_category" "category2" {
-#   count = 10
-#   name = "Category-jamf-${count.index}"
+#   count = 50
+#   name = "category-home-test-${count.index}"
 #   priority = 1
 # }
 
 
 # resource "jamfpro_policy" "policy_testing" {
-#     count = 100
-#     name = "policy-name-lock-test-${count.index}"
+#     count = 25
+#     name = "policy-home-new-${count.index}"
 #     enabled = true
 #     trigger_checkin = true
 #     frequency = "Once every day"
@@ -56,14 +56,15 @@
 #       id = 264
 #       fill_existing_user_template = true
 #     }
+#         scripts {
+#       id = 7484
+#     }
 
 #     scripts {
 #       id = 7486
 #       priority = "Before"
 #     }
 
-#     scripts {
-#       id = 7484
-#     }
+
 #   }
 # }
