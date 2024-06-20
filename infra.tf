@@ -21,7 +21,7 @@
 # }
 
 resource "jamfpro_category" "category_dupe" {
-  name = "This name is used twice"
+  name = "Cat test"
   priority = 1
 }
 
