@@ -27,7 +27,14 @@ provider "jamfpro" {
   auth_method     = "oauth2"
   client_id       = local.json_data.clientId
   client_secret   = local.json_data.clientSecret
+
+  # basic_auth_username = ""
+  # basic_auth_password = ""
+
+
+
   log_level       = "debug"
+
   jamf_load_balancer_lock = true
   max_concurrent_requests = 1
   # custom_cookies {

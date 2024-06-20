@@ -14,9 +14,14 @@
 # }
 
 
-resource "jamfpro_category" "category" {
-  count = 25
-  name = "category-home-bob1-${count.index}"
+# resource "jamfpro_category" "category" {
+#   count = 10
+#   name = "category-home-bob-${count.index}"
+#   priority = 1
+# }
+
+resource "jamfpro_category" "category_dupe" {
+  name = "This name is used twice"
   priority = 1
 }
 
