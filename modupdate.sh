@@ -19,9 +19,9 @@ done
 
 # Github links
 
-TARGET_BRANCH_SDK="dev-jl-httpclientv2"
-TARGET_BRANCH_HTTP_CLIENT="dev-jl-version2"
-TARGET_BRANCH_INTEGRATION="0.0.1"
+TARGET_BRANCH_SDK="main"
+TARGET_BRANCH_HTTP_CLIENT="main"
+TARGET_BRANCH_INTEGRATION="v0.0.3"
 
 ghRootLinkSdk="github.com/deploymenttheory/go-api-sdk-jamfpro"
 ghRootLinkHttpClient="github.com/deploymenttheory/go-api-http-client"
@@ -33,27 +33,27 @@ GH_INTEGRATION="$ghRootLinkJproIntegration@$TARGET_BRANCH_INTEGRATION"
 
 # Automated Commits
 
-echo "committing saved changes"
-debuggingCommitMessage="automated debugging"
+# echo "committing saved changes"
+# debuggingCommitMessage="automated debugging"
 
-echo $GIT_SEPARATOR
-cd $dirSdk
-git add .
-git commit -m "automated debugging comm"
-git push
+# echo $GIT_SEPARATOR
+# cd $dirSdk
+# git add .
+# git commit -m "automated debugging comm"
+# git push
 
-echo $GIT_SEPARATOR
-cd $dirHttpClient
-git add .
-git commit -m "automated debugging"
-git push
+# echo $GIT_SEPARATOR
+# cd $dirHttpClient
+# git add .
+# git commit -m "automated debugging"
+# git push
 
-echo $GIT_SEPARATOR
-cd $dirJproIntegration
-git add .
-git commit -m "automated debugging"
-git push
-echo "----------GIT DONE----------"
+# echo $GIT_SEPARATOR
+# cd $dirJproIntegration
+# git add .
+# git commit -m "automated debugging"
+# git push
+# echo "----------GIT DONE----------"
 
 # Mod dependency updates
 echo "updating sdk modules..."
@@ -72,4 +72,3 @@ GOPROXY=direct go get -u $GH_INTEGRATION
 go mod tidy
 
 echo "done"
-clear

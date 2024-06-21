@@ -14,20 +14,21 @@
 # }
 
 
-# resource "jamfpro_category" "category" {
-#   count = 10
-#   name = "category-home-bob-${count.index}"
-#   priority = 1
-# }
-
-resource "jamfpro_category" "category_dupe" {
-  name = "Cat test"
+resource "jamfpro_category" "category" {
+  count = 10
+  name = "category-home-bob-${count.index}"
   priority = 1
 }
 
+# resource "jamfpro_category" "category_dupe" {
+#   count = 25
+#   name = "Cat test rename ${count.index}"
+#   priority = 1
+# }
+
 
 # resource "jamfpro_script" "scripts_0001" {
-#   name            = "tf-example-script-fileupload"
+#   name            = "tf-example-script-fileupload1"
 #   script_contents = "wEFewfwefwe"
 #   os_requirements = "13"
 #   priority        = "BEFORE"
@@ -41,8 +42,8 @@ resource "jamfpro_category" "category_dupe" {
 
 
 # resource "jamfpro_policy" "policy_testing" {
-#     count = 50
-#     name = "policy-home-new-call-${count.index}"
+#     count = 5
+#     name = "policy-test-${count.index}"
 #     enabled = true
 #     trigger_checkin = true
 #     frequency = "Once every day"

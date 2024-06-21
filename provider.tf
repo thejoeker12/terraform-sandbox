@@ -23,7 +23,7 @@ locals {
 
 
 provider "jamfpro" {
-  instance_domain = "https://lbgsandbox.jamfcloud.com"
+  jamf_instance_fqdn = "https://lbgsandbox.jamfcloud.com"
   auth_method     = "oauth2"
   client_id       = local.json_data.clientId
   client_secret   = local.json_data.clientSecret
