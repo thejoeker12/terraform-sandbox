@@ -20,7 +20,7 @@ done
 # Github links
 
 TARGET_BRANCH_SDK="main"
-TARGET_BRANCH_HTTP_CLIENT="main"
+TARGET_BRANCH_HTTP_CLIENT="v0.2.1"
 TARGET_BRANCH_INTEGRATION="v0.0.3"
 
 ghRootLinkSdk="github.com/deploymenttheory/go-api-sdk-jamfpro"

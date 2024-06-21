@@ -33,6 +33,7 @@ provider "jamfpro" {
   #   name = "jpro-ingress"
   #   value = "c07c442e6c87d1ef"
   # }
+  mandatory_request_delay_milliseconds = 10
 }
 
 
