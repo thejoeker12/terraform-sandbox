@@ -28,7 +28,8 @@
 
 
 resource "jamfpro_script" "scripts_0001" {
-  name            = "tf-example-script-fileupload1"
+  count = 30 
+  name            = "tf-example-script-nolock-${count.index}"
   script_contents = "wEFewfwefwe"
   os_requirements = "13"
   priority        = "BEFORE"
