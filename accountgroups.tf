@@ -76,58 +76,56 @@ resource "jamfpro_account_group"  "jamf_pro_account_group_001" {
   
 }
 
-# // account group - administrator example
-#  resource "jamfpro_account_group"  "jamf_pro_account_group_002" {
-#   name         = "tf-example-account_group-administrator"
-#   access_level = "Full Access" // Full Access / Site Access / Group Access
-#   privilege_set = "Administrator" 
+// account group - administrator example
+ resource "jamfpro_account_group"  "jamf_pro_account_group_002" {
+  name         = "tf-example-account_group-administrator"
+  access_level = "Full Access" // Full Access / Site Access / Group Access
+  privilege_set = "Administrator" 
 
-#   site {
-#     id   = -1    
-#     name = "None" 
-#   }
-  
-# }
+  site {
+    id   = -1    
+    name = "None" 
+  }
+}
 
 # // account group - auditor example
-# resource "jamfpro_account_group"  "jamf_pro_account_group_003" {
-#   name         = "tf-example-account_group-auditor"
-#   access_level = "Full Access" // Full Access / Site Access / Group Access
-#   privilege_set = "Auditor" 
+resource "jamfpro_account_group"  "jamf_pro_account_group_003" {
+  name         = "tf-example-account_group-auditor"
+  access_level = "Full Access" // Full Access / Site Access / Group Access
+  privilege_set = "Auditor" 
 
-#   site {
-#     id   = -1    
-#     name = "None" 
-#   }
-  
-# }
+  site {
+    id   = -1    
+    name = "None" 
+  }
+}
 
-# // account group - enrollment only example
-# resource "jamfpro_account_group"  "jamf_pro_account_group_004" {
-#   name         = "tf-example-account_group-enrollmentonly"
-#   access_level = "Full Access" // Full Access / Site Access / Group Access
-#   privilege_set = "Enrollment Only" 
+// account group - enrollment only example
+resource "jamfpro_account_group"  "jamf_pro_account_group_004" {
+  name         = "tf-example-account_group-enrollmentonly"
+  access_level = "Full Access" // Full Access / Site Access / Group Access
+  privilege_set = "Enrollment Only" 
 
-#   site {
-#     id   = -1    
-#     name = "None"
-#   }
-  
-# }
+  site {
+    id   = -1    
+    name = "None"
+  }
+}
 
-# // account group - custom example
-# resource "jamfpro_account_group"  "jamf_pro_account_group_005" {
-#   name         = "IDENTITY_SERVER_GROUP_NAME" // LDAP_GROUP_NAME / iDP_GROUP_NAME
-#   access_level = "Full Access" // Full Access / Site Access / Group Access
-#   privilege_set = "Custom" 
+// account group - custom example
+resource "jamfpro_account_group"  "jamf_pro_account_group_005" {
+  name         = "IDENTITY_SERVER_GROUP_NAME" // LDAP_GROUP_NAME / iDP_GROUP_NAME
+  access_level = "Full Access" // Full Access / Site Access / Group Access
+  privilege_set = "Custom" 
 
-#   site {
-#     id   = -1 
-#     name = "None" 
-#   }
+  site {
+    id   = -1 
+    name = "None" 
+  }
 
+// TODO this gives 409. Not sure why?
 #   identity_server {
 #     id   = 1 // LDAP_GROUP_ID / iDP_GROUP_ID
 #   }
   
-# }
+}
