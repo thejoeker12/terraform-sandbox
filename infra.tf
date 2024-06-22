@@ -16,30 +16,30 @@
 
 # resource "jamfpro_category" "category" {
 #   count = 10
-#   name = "category-home-bob-${count.index}"
+#   name = "category-home-${count.index}"
 #   priority = 1
 # }
 
-# resource "jamfpro_category" "category_dupe" {
-#   count = 25
-#   name = "Cat test rename ${count.index}"
-#   priority = 1
-# }
-
-
-resource "jamfpro_script" "scripts_0001" {
-  count = 30 
-  name            = "tf-example-script-nolock-${count.index}"
-  script_contents = "wEFewfwefwe"
-  os_requirements = "13"
-  priority        = "BEFORE"
-  info            = "Adds target user or group to specified group membership, or removes said membership."
-  notes           = "Jamf Pro script parameters 4 -> 7"
-  parameter4  = "100" // targetID
-  parameter5  = "group" // Target Type - Must be either "user" or "group"
-  parameter6  = "someGroupName" // targetMembership
-  parameter7  = "add" // Script Action - Must be either "add" or "remove"
+resource "jamfpro_category" "category_dupe" {
+  count = 25
+  name = "Cat test rename ${count.index}"
+  priority = 1
 }
+
+
+# resource "jamfpro_script" "scripts_0001" {
+#   count = 30 
+#   name            = "tf-example-script-nolock-${count.index}"
+#   script_contents = "wEFewfwefwe"
+#   os_requirements = "13"
+#   priority        = "BEFORE"
+#   info            = "Adds target user or group to specified group membership, or removes said membership."
+#   notes           = "Jamf Pro script parameters 4 -> 7"
+#   parameter4  = "100" // targetID
+#   parameter5  = "group" // Target Type - Must be either "user" or "group"
+#   parameter6  = "someGroupName" // targetMembership
+#   parameter7  = "add" // Script Action - Must be either "add" or "remove"
+# }
 
 
 # resource "jamfpro_policy" "policy_testing" {
