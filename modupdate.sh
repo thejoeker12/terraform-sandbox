@@ -5,9 +5,9 @@ GIT_SEPARATOR="----------GIT----------"
 # Dir check
 dirProvider="/Users/joseph/github/terraform-provider-jamfpro"
 dirSdk="/Users/joseph/github/go-api-sdk-jamfpro"
-dirHttpClient="/Users/joseph/github/go-api-http-client"
-dirJproIntegration="/Users/joseph/github/go-api-http-client-integration-jamfpro"
-directories=("$dirProvider" "$dirSdk" "$dirHttpClient" "$dirJproIntegration")
+dirClient="/Users/joseph/github/go-api-http-client"
+dirIntegration="/Users/joseph/github/go-api-http-client-integrations"
+directories=("$dirProvider" "$dirSdk" "$dirClient" "$dirIntegration")
 
 echo "checking dirs..."
 for dir in "${directories[@]}"; do
@@ -19,17 +19,17 @@ done
 
 # Github links
 
-TARGET_BRANCH_SDK="main"
-TARGET_BRANCH_HTTP_CLIENT="v0.2.1"
-TARGET_BRANCH_INTEGRATION="v0.0.3"
+ghSdk="github.com/deploymenttheory/go-api-sdk-jamfpro"
+ghClient="github.com/deploymenttheory/go-api-http-client"
+ghIntegration="github.com/deploymenttheory/go-api-http-client-integrations"
 
-ghRootLinkSdk="github.com/deploymenttheory/go-api-sdk-jamfpro"
-ghRootLinkHttpClient="github.com/deploymenttheory/go-api-http-client"
-ghRootLinkJproIntegration="github.com/deploymenttheory/go-api-http-client-integrations/jamfpro/jamfprointegration"
+TARGET_BRANCH_SDK="latest"
+TARGET_BRANCH_HTTP_CLIENT="latest"
+TARGET_BRANCH_INTEGRATION="latest"
 
-GH_SDK="$ghRootLinkSdk@$TARGET_BRANCH_SDK"
-GH_HTTP_CLIENT="$ghRootLinkHttpClient@$TARGET_BRANCH_HTTP_CLIENT"
-GH_INTEGRATION="$ghRootLinkJproIntegration@$TARGET_BRANCH_INTEGRATION"
+GH_SDK="$ghSdk@$TARGET_BRANCH_SDK"
+GH_CLIENT="$ghClient@$TARGET_BRANCH_HTTP_CLIENT"
+GH_INTEGRATION="$ghIntegration@$TARGET_BRANCH_INTEGRATION"
 
 # Automated Commits
 
@@ -56,10 +56,13 @@ GH_INTEGRATION="$ghRootLinkJproIntegration@$TARGET_BRANCH_INTEGRATION"
 # echo "----------GIT DONE----------"
 
 # Mod dependency updates
+
+
 echo "updating sdk modules..."
 cd $dirSdk
 go clean --cache
-GOPROXY=direct go get -u $GH_HTTP_CLIENT
+GOPROXY=direct go get -u $GH_CLIENT
+GOPROXY=direct go get -u $GH_INTEGRATION
 go mod tidy
 
 
@@ -67,8 +70,15 @@ echo "updating provider modules..."
 cd $dirProvider
 go clean --cache
 GOPROXY=direct go get -u $GH_SDK
-GOPROXY=direct go get -u $GH_HTTP_CLIENT
+GOPROXY=direct go get -u $GH_CLIENT
 GOPROXY=direct go get -u $GH_INTEGRATION
 go mod tidy
+
+echo "updating integration modules.."
+cd $dirIntegration
+go clean --cache
+GOPROXY=direct go get -u $GH_CLIENT
+go mod tidy
+
 
 echo "done"
