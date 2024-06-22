@@ -20,11 +20,11 @@
 #   priority = 1
 # }
 
-resource "jamfpro_category" "category_dupe" {
-  count = 25
-  name = "Cat test rename ${count.index}"
-  priority = 1
-}
+# resource "jamfpro_category" "category_dupe" {
+#   count = 25
+#   name = "Cat test rename ${count.index}"
+#   priority = 1
+# }
 
 
 # resource "jamfpro_script" "scripts_0001" {
