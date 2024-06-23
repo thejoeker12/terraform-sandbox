@@ -5,7 +5,6 @@ clientauth.json
 .terraform.lock.hcl
 .terraform*
 temp.text
-policy_name.txt
+
+resource_names
 logs
-group_name.txt
-log_*
