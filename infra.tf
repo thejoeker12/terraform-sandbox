@@ -12,15 +12,15 @@
 #   # site_id = 1174
 # }
 
-resource "jamfpro_script" "scripts_0002" {
-  count = 25
-  name            = "Category Testing Script-home-${count.index}"
-  script_contents = "hello world"
-  os_requirements = "13.1"
-  priority        = "BEFORE"
-  info = "Your script info here."
+# resource "jamfpro_script" "scripts_0002" {
+#   count = 25
+#   name            = "Category Testing Script-home-${count.index}"
+#   script_contents = "hello world"
+#   os_requirements = "13.1"
+#   priority        = "BEFORE"
+#   info = "Your script info here."
 
-}
+# }
 
 # resource "jamfpro_script" "scripts_0003" {
 #   name            = "Category Testing Script-cleanuptest-3"
@@ -37,3 +37,19 @@ resource "jamfpro_script" "scripts_0002" {
 #   priority        = "BEFORE"
 #   info = "Your script info here."
 # }
+
+# resource "jamfpro_account_group"  "jamf_pro_account_group_002" {
+#   name         = "tf-example-account_group-testing-flattening"
+#   access_level = "Full Access" // Full Access / Site Access / Group Access
+#   privilege_set = "Administrator" 
+
+#   member_ids = sort([1, 501, 72])
+  
+# }
+
+resource "jamfpro_advanced_computer_search" "new" {
+  name = "test search"
+  display_fields = ["Computer Name"]
+    
+  
+}
