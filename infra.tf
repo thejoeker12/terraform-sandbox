@@ -47,9 +47,17 @@
   
 # }
 
-resource "jamfpro_advanced_computer_search" "new" {
-  name = "test search"
-  display_fields = ["Computer Name"]
+# resource "jamfpro_advanced_computer_search" "new" {
+#   name = "test search"
+#   display_fields = ["Computer Name"]
     
   
-}
+# }
+
+
+# resource "jamfpro_computer_extension_attribute" "test" {
+#   name = "testing new config 4"
+#   enabled = true
+#   input_type = "script"
+#   input_script = "echo hello world new"
+# }
