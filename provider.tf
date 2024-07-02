@@ -23,17 +23,22 @@ locals {
 
 
 provider "jamfpro" {
-  jamf_instance_fqdn = "https://lbgsandbox.jamfcloud.com"
+  jamfpro_instance_fqdn = "https://lbgsandbox.jamfcloud.com"
   auth_method     = "oauth2"
   client_id       = local.json_data.clientId
   client_secret   = local.json_data.clientSecret
-  log_level       = "debug"
-  jamf_load_balancer_lock = true
-  # custom_cookies {
-  #   name = "jpro-ingress"
-  #   value = "c07c442e6c87d1ef"
-  # }
+  enable_client_sdk_logs = false
+  log_export_path = "/path/to/logfile.json"
+  hide_sensitive_data = true
+  custom_cookies {
+    // Cookie URL is set to jamfpro_instance_fqdn
+    name = "cookie name"
+    value = "cookie value"
+  }
+  jamfpro_load_balancer_lock = true
+  token_refresh_buffer_period_seconds = 300
   mandatory_request_delay_milliseconds = 100
+  
 }
 
 
