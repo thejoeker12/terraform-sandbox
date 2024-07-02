@@ -10,7 +10,7 @@ resource "jamfpro_category" "example_category_newlogger" {
 }
 
 resource "jamfpro_script" "scripts_newlogger" {
-  name            = "tf-example-script-inline_newlogger"
+  name            = "tf-example-script-inline_newlogger-rename"
   script_contents = "hello world"
   os_requirements = "13.1"
   priority        = "BEFORE"
