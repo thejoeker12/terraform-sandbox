@@ -31,7 +31,6 @@ provider "jamfpro" {
   # client_sdk_log_export_path = "/Users/joseph/github/test.json"
   hide_sensitive_data = true
   custom_cookies {
-    // Cookie URL is set to jamfpro_instance_fqdn
     name = "cookie name"
     value = "cookie value"
   }
