@@ -3,7 +3,7 @@
 # variable "global_name_prefix" {
 #     type = string
 #     default = "Jl-Testing"
-  
+
 # }
 
 

@@ -23,21 +23,21 @@ locals {
 
 
 provider "jamfpro" {
-  jamfpro_instance_fqdn = "https://lbgsandbox.jamfcloud.com"
-  auth_method     = "oauth2"
-  client_id       = local.json_data.clientId
-  client_secret   = local.json_data.clientSecret
+  jamfpro_instance_fqdn  = "https://lbgsandbox.jamfcloud.com"
+  auth_method            = "oauth2"
+  client_id              = local.json_data.clientId
+  client_secret          = local.json_data.clientSecret
   enable_client_sdk_logs = false
   # client_sdk_log_export_path = "/Users/joseph/github/test.json"
   hide_sensitive_data = true
   custom_cookies {
-    name = "cookie name"
+    name  = "cookie name"
     value = "cookie value"
   }
-  jamfpro_load_balancer_lock = true
-  token_refresh_buffer_period_seconds = 300
+  jamfpro_load_balancer_lock           = true
+  token_refresh_buffer_period_seconds  = 300
   mandatory_request_delay_milliseconds = 0
-  
+
 }
 
 

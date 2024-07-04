@@ -23,7 +23,7 @@ ghSdk="github.com/deploymenttheory/go-api-sdk-jamfpro"
 ghClient="github.com/deploymenttheory/go-api-http-client"
 ghIntegration="github.com/deploymenttheory/go-api-http-client-integrations"
 
-TARGET_BRANCH_SDK="v1.8.0"
+TARGET_BRANCH_SDK="main"
 TARGET_BRANCH_HTTP_CLIENT="v0.2.6"
 TARGET_BRANCH_INTEGRATION="v0.0.7"
 
