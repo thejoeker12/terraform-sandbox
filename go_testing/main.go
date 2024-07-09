@@ -1,49 +1,24 @@
 package main
 
-import (
-	"time"
-
-	"go.uber.org/zap"
-)
+import "fmt"
 
 func main() {
-	config := zap.NewProductionConfig()
+	test := []string{"a", "b", "c", "d", "a"}
+	fmt.Print(redirectLoop(test))
 
-	config.OutputPaths = []string{"stdout", "testlogfile.txt"}
+}
 
-	logger, _ := config.Build()
-	sugar := logger.Sugar()
+func redirectLoop(urls []string) bool {
 
-	defer logger.Sync()
+	for i, j := range urls {
+		for k, l := range urls {
+			if i != k {
+				if j == l {
+					return true
+				}
+			}
+		}
+	}
 
-	sugar.Infow("failed to fetch URL",
-		"url", "http://example.com",
-		"attempt", 3,
-		"backoff", time.Second,
-	)
-
-	sugar.Infow("failed to fetch URL",
-		"url", "http://example.com",
-		"attempt", 3,
-		"backoff", time.Second,
-		zap.String("thing", "value"),
-	)
-
-	sugar.Infow("failed to fetch URL",
-		"url", "http://example.com",
-		"attempt", 3,
-		"backoff", time.Second,
-	)
-
-	sugar.Infow("failed to fetch URL",
-		"url", "http://example.com",
-		"attempt", 3,
-		"backoff", time.Second,
-	)
-
-	sugar.Infow("failed to fetch URL",
-		"url", "http://example.com",
-		"attempt", 3,
-		"backoff", time.Second,
-	)
+	return false
 }
