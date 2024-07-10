@@ -25,7 +25,7 @@ ghIntegration="github.com/deploymenttheory/go-api-http-client-integrations"
 
 TARGET_BRANCH_SDK="main"
 TARGET_BRANCH_HTTP_CLIENT="main"
-TARGET_BRANCH_INTEGRATION="main"
+TARGET_BRANCH_INTEGRATION="latest"
 
 GH_SDK="$ghSdk@$TARGET_BRANCH_SDK"
 GH_CLIENT="$ghClient@$TARGET_BRANCH_HTTP_CLIENT"
@@ -74,7 +74,7 @@ GOPROXY=direct go get -u $GH_CLIENT
 GOPROXY=direct go get -u $GH_INTEGRATION
 go mod tidy
 
-echo "updating integration modules.."
+echo "updating integration modules..."
 cd $dirIntegration
 go clean --cache
 go mod tidy
