@@ -65,6 +65,7 @@
 # }
 
 
-resource "jamfpro_category" "new_cat" {
-  name = "a testing name"
-}
+# resource "jamfpro_category" "new_cat" {
+#   count = 100
+#   name = "100 Categories No-${count.index}"
+# }
