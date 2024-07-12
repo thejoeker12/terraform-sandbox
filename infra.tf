@@ -70,7 +70,7 @@ resource "jamfpro_policy" "jamfpro_policy_script_example" {
 
 
 resource "jamfpro_category" "new_cat" {
-  count = 100
-  name = "100 Categories-${count.index}"
+  count = 10
+  name = "100 Categories-1-${count.index}"
   priority = 5
 }
