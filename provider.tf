@@ -27,7 +27,7 @@ provider "jamfpro" {
   auth_method            = "oauth2"
   client_id              = local.json_data.clientId
   client_secret          = local.json_data.clientSecret
-  enable_client_sdk_logs = false
+  enable_client_sdk_logs = true
   # client_sdk_log_export_path = "/Users/joseph/github/test.json"
   hide_sensitive_data = true
   custom_cookies {
@@ -36,7 +36,7 @@ provider "jamfpro" {
   }
   jamfpro_load_balancer_lock           = true
   token_refresh_buffer_period_seconds  = 300
-  mandatory_request_delay_milliseconds = 150
+  mandatory_request_delay_milliseconds = 100
 
 }
 
