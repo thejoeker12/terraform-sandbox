@@ -14,7 +14,7 @@ def getCurrentIngressCookie():
         ingress_cookie = cookies["jpro-ingress"]
         return ingress_cookie
     
-    raise Exception("No cookies found")
+    return ""
 
 
 def new_jamf_client() -> jamfpi.JamfTenant:
@@ -28,7 +28,10 @@ def new_jamf_client() -> jamfpi.JamfTenant:
         logging_level=logging.INFO
     )
 
-    client.classic._session.cookies.set(name="jpro-ingress", value=getCurrentIngressCookie())
+    cookieVal = getCurrentIngressCookie()
+    if cookieVal != "":
+        print("cookies found")
+        client.classic._session.cookies.set(name="jpro-ingress", value=cookieVal)
     return client
 
 
