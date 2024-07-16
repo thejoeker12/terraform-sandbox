@@ -52,8 +52,8 @@
 # }
 
 
-# resource "jamfpro_category" "new_cat" {
-#   count = 10
-#   name = "100 Categories-1-${count.index}"
-#   priority = 5
-# }
+resource "jamfpro_category" "new_cat" {
+  count = 5
+  name = "100 Categories-1-${count.index}"
+  priority = 5
+}
