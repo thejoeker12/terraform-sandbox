@@ -1,24 +1,29 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
-	test := []string{"a", "b", "c", "d", "a"}
-	fmt.Print(redirectLoop(test))
+	testVal := "text/xml;charset=UTF-8"
+	fmt.Println(parseHeader(testVal))
 
 }
 
-func redirectLoop(urls []string) bool {
+func parseHeader(header string) (string, map[string]string) {
+	parts := strings.SplitN(header, ";", 2) // Split into main value and parameters
+	mainValue := strings.TrimSpace(parts[0])
 
-	for i, j := range urls {
-		for k, l := range urls {
-			if i != k {
-				if j == l {
-					return true
-				}
+	params := make(map[string]string)
+	if len(parts) > 1 { // Check if there are parameters
+		for _, part := range strings.Split(parts[1], ";") {
+			kv := strings.SplitN(part, "=", 2)
+			if len(kv) == 2 {
+				params[strings.TrimSpace(kv[0])] = strings.Trim(strings.TrimSpace(kv[1]), "\"")
 			}
 		}
 	}
 
-	return false
+	return mainValue, params
 }

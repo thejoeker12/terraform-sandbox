@@ -7,6 +7,8 @@ from pycookiecheat import chrome_cookies
 import logging
 from pprint import pprint
 
+EXCLUDE_STRING = "tf-ghatest"
+
 
 def getCurrentIngressCookie():
     cookies = chrome_cookies("https://lbgsandbox.jamfcloud.com")
@@ -44,7 +46,7 @@ def delete_all_policies(client: jamfpi.JamfTenant, exclude):
         raise Exception("problem")
     
     for p in all_json:
-        if str(p["id"]) not in exclude:
+        if str(p["id"]) not in exclude or EXCLUDE_STRING in p["name"]:
             delete = client.classic.policies.delete_by_id(p["id"])
             if delete.ok:
                 print(f"Deleted {p['id']} successfully")
@@ -59,7 +61,7 @@ def delete_all_computer_groups(client: jamfpi.JamfTenant, exclude: list):
         raise Exception("problem")
     
     for i in resource_json:
-        if str(i["id"]) not in exclude:
+        if str(i["id"]) not in exclude or EXCLUDE_STRING in i["name"]:
             delete = client.classic.computergroups.delete_by_id(i["id"])
             if delete.ok:
                 print(f"Deleted {i['id']} successfully")
@@ -76,7 +78,7 @@ def delete_all_categories(client: jamfpi.JamfTenant, exclude: list):
         raise Exception("problem")
     
     for i in resource_json:
-        if str(i["id"]) not in exclude:
+        if str(i["id"]) not in exclude or EXCLUDE_STRING in i["name"]:
             delete = client.classic.categories.delete_by_id(i["id"])
             if delete.ok:
                 print(f"Deleted {i['id']} successfully")
@@ -88,7 +90,7 @@ def execute(client):
     excluded_policies = []
     excluded_computer_groups = ["1", "2"]
     # print("deleting computer groups...")
-    delete_all_computer_groups(client, excluded_computer_groups)
+    # delete_all_computer_groups(client, excluded_computer_groups)
     # print("deleting policies...")
     delete_all_policies(client, excluded_policies)
     # print("complete")
