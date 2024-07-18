@@ -23,13 +23,13 @@ locals {
 
 
 provider "jamfpro" {
-  jamfpro_instance_fqdn  = "https://lbgsandbox.jamfcloud.com"
-  auth_method            = "oauth2"
-  client_id              = local.json_data.clientId
-  client_secret          = local.json_data.clientSecret
-  enable_client_sdk_logs = true
+  jamfpro_instance_fqdn      = "https://lbgsandbox.jamfcloud.com"
+  auth_method                = "oauth2"
+  client_id                  = local.json_data.clientId
+  client_secret              = local.json_data.clientSecret
+  enable_client_sdk_logs     = true
   client_sdk_log_export_path = "/Users/joseph/github/test.json"
-  hide_sensitive_data = true
+  hide_sensitive_data        = true
   custom_cookies {
     name  = "cookie name"
     value = "cookie value"

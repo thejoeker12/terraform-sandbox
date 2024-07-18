@@ -58,8 +58,8 @@
 #   priority = 5
 # }
 
-resource "jamfpro_building" "test" {
-  count = 10
-  name = "Test Number new name - ${count.index}"
+# resource "jamfpro_building" "test" {
+#   count = 10
+#   name = "Test Number new name - ${count.index}"
 
-}
+# }
