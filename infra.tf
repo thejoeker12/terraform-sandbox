@@ -54,12 +54,16 @@
 
 # resource "jamfpro_category" "new_cat" {
 #   count = 5
-#   name = "100 Categories-1-${count.index}"
+#   name = "100 Categories-s-${count.index}"
 #   priority = 5
 # }
 
 # resource "jamfpro_building" "test" {
 #   count = 10
-#   name = "Test Number new name - ${count.index}"
+#   name = "Test Number-s-${count.index}"
 
+# }
+
+# resource "jamfpro_static_computer_group" "jamfpro_static_computer_group_001" {
+#   name = "Example Static Computer TEST1"
 # }
