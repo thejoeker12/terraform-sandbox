@@ -36,7 +36,7 @@ provider "jamfpro" {
   }
   jamfpro_load_balancer_lock           = true
   token_refresh_buffer_period_seconds  = 300
-  mandatory_request_delay_milliseconds = 100
+  mandatory_request_delay_milliseconds = 0
 
 }
 

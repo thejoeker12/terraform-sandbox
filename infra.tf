@@ -67,3 +67,9 @@
 # resource "jamfpro_static_computer_group" "jamfpro_static_computer_group_001" {
 #   name = "Example Static Computer TEST1"
 # }
+
+
+resource "jamfpro_department" "test" {
+    count = 100
+    name = "Test Department - ${count.index}"
+}
