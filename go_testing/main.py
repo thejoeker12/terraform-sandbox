@@ -3,7 +3,7 @@ from pprint import pprint
 
 def main():
     url = "https://lbgsandbox.jamfcloud.com/api/v1/app-installers/titles"
-    token = " eyJhbGciOiJIUzI1NiJ9.eyJhdXRoZW50aWNhdGVkLWFwcCI6IkdFTkVSSUMiLCJhdXRoZW50aWNhdGlvbi10eXBlIjoiSlNTIiwiZ3JvdXBzIjpbXSwic3ViamVjdC10eXBlIjoiSlNTX1VTRVJfSUQiLCJ0b2tlbi11dWlkIjoiMTZiNmFhODgtZjIyZC00OGNiLWI2ZjYtNDg5MWNiMWVhOGY5IiwibGRhcC1zZXJ2ZXItaWQiOi0xLCJzdWIiOiIzIiwiZXhwIjoxNzE4NjIxNjc2fQ.8zUuQAnjNeciMHWbw_4kV4X1N7alJw43BGWuuFoVEyA"
+    token = "eyJhbGciOiJIUzI1NiJ9.eyJhdXRoZW50aWNhdGVkLWFwcCI6IkdFTkVSSUMiLCJhdXRoZW50aWNhdGlvbi10eXBlIjoiSlNTIiwiZ3JvdXBzIjpbXSwic3ViamVjdC10eXBlIjoiSlNTX1VTRVJfSUQiLCJ0b2tlbi11dWlkIjoiMTQxZTgyYjctODZkZS00M2ExLThjMGYtNGE5MGM3MTBhMzNhIiwibGRhcC1zZXJ2ZXItaWQiOi0xLCJzdWIiOiIzIiwiZXhwIjoxNzIyNTI2NjgwfQ.rGMousnyeiOEVinBmEEZmwfzjDN6ghxdwB6V3QWIEG8"
     headers = {
         "accept": "application/json",
         "Content-Type": "application/json",
@@ -26,12 +26,12 @@ def main():
     #     pprint(reqJson)
 
     # Creates new App
-    json_data = open("/Users/joseph/github/terraform-sandbox/go_testing/payload.json", "r").read()
-    print(json_data)
-    req = requests.request("DELETE", url="https://lbgsandbox.jamfcloud.com/api/v1/app-installers/deployments/3", headers=headers)
+    # json_data = open("/Users/joseph/github/terraform-sandbox/go_testing/payload.json", "r").read()
+    # print(json_data)
+    req = requests.request("GET", url="https://lbgsandbox.jamfcloud.com/JSSResource/policies/id/22", headers=headers)
     print(req)
     if req.ok:
-        print(req.text)
+        pprint(req.json())
 
 
 main()
