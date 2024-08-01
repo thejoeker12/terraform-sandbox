@@ -11,10 +11,28 @@ resource "jamfpro_policy" "jamfpro_policy_script_example" {
 
 
   payloads {
+    scripts {
+      id = jamfpro_script.script_for_policy.id
+    }
+    scripts {
+      id = jamfpro_script.script_for_policy_2.id
+    }
   }
 
 }
 
+resource "jamfpro_script" "script_for_policy" {
+  name = "Test Name"
+  script_contents = "echo 'hello world'"
+  priority = "BEFORE"
+}
+
+resource "jamfpro_script" "script_for_policy_2" {
+  name = "Test Name 2"
+  script_contents = "echo 'hello Joseph'"
+  category_id = 5
+  priority = "AFTER"
+}
 
 # resource "jamfpro_category" "new_cat" {
 #   count = 5
