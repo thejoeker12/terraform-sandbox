@@ -23,9 +23,9 @@ ghSdk="github.com/deploymenttheory/go-api-sdk-jamfpro"
 ghClient="github.com/deploymenttheory/go-api-http-client"
 ghIntegration="github.com/deploymenttheory/go-api-http-client-integrations"
 
-TARGET_BRANCH_SDK="dev-jl-testing"
-TARGET_BRANCH_HTTP_CLIENT="dev-jl-testing"
-TARGET_BRANCH_INTEGRATION="dev-jl-testing"
+TARGET_BRANCH_SDK="main"
+TARGET_BRANCH_HTTP_CLIENT="main"
+TARGET_BRANCH_INTEGRATION="main"
 
 GH_SDK="$ghSdk@$TARGET_BRANCH_SDK"
 GH_CLIENT="$ghClient@$TARGET_BRANCH_HTTP_CLIENT"
@@ -77,6 +77,7 @@ go mod tidy
 echo "updating integration modules..."
 cd $dirIntegration
 go clean --cache
+GOPROXY=direct go get -u $GH_CLIENT
 go mod tidy
 
 echo "done"

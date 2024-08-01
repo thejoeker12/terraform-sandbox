@@ -1,27 +1,23 @@
 resource "jamfpro_policy" "jamfpro_policy_script_example" {
-  name                          = "JL Testing"
+  name                          = "JL Policy"
   enabled                       = false
   trigger_checkin               = false
 
-  # network_limitations {
-  #   minimum_network_connection = "No Minimum"
-  #   any_ip_address             = false
-  # }
 
   scope {
     all_computers = false
     all_jss_users = false
   }
 
-  self_service {
-    use_for_self_service            = true
-    self_service_display_name       = ""
-    install_button_text             = "Install"
-    self_service_description        = ""
-    force_users_to_view_description = false
+  # self_service {
+  #   use_for_self_service            = true
+  #   self_service_display_name       = ""
+  #   install_button_text             = "Install"
+  #   self_service_description        = ""
+  #   force_users_to_view_description = false
 
-    feature_on_main_page = false
-  }
+  #   feature_on_main_page = false
+  # }
 
   payloads {
     # packages {
@@ -69,7 +65,6 @@ resource "jamfpro_policy" "jamfpro_policy_script_example" {
 # }
 
 
-resource "jamfpro_department" "test" {
-    count = 100
-    name = "Test Joseph - ${count.index}"
-}
+# resource "jamfpro_department" "test" {
+#     name = "Dept - 10"
+# }
