@@ -1,17 +1,13 @@
+resource "jamfpro_policy" "newpolicy" {
+  name = "New Policy 1"
+  enabled = false
 
+  scope {
+    all_computers = false
+    all_jss_users = false
+  }
 
-
-
-
-import {
-  to = jamfpro_script.script10
-  id = 7725
-
-}
-
-
-import {
-  to = jamfpro_script.script11
-  id = 7726
-
+  payloads {
+    
+  }
 }
