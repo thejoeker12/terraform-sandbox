@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <policy>
     <general>
-        <id>0</id>
-        <name>New Policy 1</name>
+        <name>New Policy 15</name>
         <enabled>false</enabled>
         <trigger_checkin>false</trigger_checkin>
         <trigger_enrollment_complete>false</trigger_enrollment_complete>
@@ -110,12 +109,12 @@
         <action></action>
         <disk_encryption_configuration_id>0</disk_encryption_configuration_id>
         <auth_restart>false</auth_restart>
-        <remediate_key_type></remediate_key_type>
+        <remediate_key_type>Individual</remediate_key_type>
         <remediate_disk_encryption_configuration_id>0</remediate_disk_encryption_configuration_id>
     </disk_encryption>
     <reboot>
         <message></message>
-        <startup_disk></startup_disk>
+        <startup_disk>Current Startup Disk</startup_disk> 
         <specify_startup></specify_startup>
         <no_user_logged_in></no_user_logged_in>
         <user_logged_in></user_logged_in>

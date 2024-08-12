@@ -2,7 +2,7 @@
 <policy>
     <general>
         <name>Empty Policy 2</name>
-        <enabled>true</enabled>
+        <!-- <enabled>true</enabled>
         <trigger>EVENT</trigger>
         <trigger_checkin>false</trigger_checkin>
         <trigger_enrollment_complete>false</trigger_enrollment_complete>
@@ -47,9 +47,9 @@
         <site>
             <id>-1</id>
             <name>None</name>
-        </site>
+        </site> -->
     </general>
-    <scope>
+    <!-- <scope>
         <all_computers>false</all_computers>
         <computers />
         <computer_groups />
@@ -163,5 +163,5 @@
     </user_interaction>
     <disk_encryption>
         <action>none</action>
-    </disk_encryption>
+    </disk_encryption> -->
 </policy>

@@ -2,29 +2,26 @@ import requests
 from pprint import pprint
 
 def main():
-    token = "eyJhbGciOiJIUzI1NiJ9.eyJhdXRoZW50aWNhdGVkLWFwcCI6IkdFTkVSSUMiLCJhdXRoZW50aWNhdGlvbi10eXBlIjoiSlNTIiwiZ3JvdXBzIjpbXSwic3ViamVjdC10eXBlIjoiSlNTX1VTRVJfSUQiLCJ0b2tlbi11dWlkIjoiMjk3MWU5YTctNTIzZS00ZGUzLTk5NDEtN2MwZTcyMTcwNTIzIiwibGRhcC1zZXJ2ZXItaWQiOi0xLCJzdWIiOiIzIiwiZXhwIjoxNzIzMTE3ODUwfQ.ppW9yF3njRst_3y3KDvo89onI8wBhEmsSfQmKUp5bb0"
+    token = "eyJhbGciOiJIUzI1NiJ9.eyJhdXRoZW50aWNhdGVkLWFwcCI6IkdFTkVSSUMiLCJhdXRoZW50aWNhdGlvbi10eXBlIjoiSlNTIiwiZ3JvdXBzIjpbXSwic3ViamVjdC10eXBlIjoiSlNTX1VTRVJfSUQiLCJ0b2tlbi11dWlkIjoiZDY3Yjk5OTMtZjhiZS00MTEyLWEwZjItNjdkMTZlMDJhMDllIiwibGRhcC1zZXJ2ZXItaWQiOi0xLCJzdWIiOiIzIiwiZXhwIjoxNzIzMTMzNzAzfQ.mX_K-d4x1R92oUbY2SyvzIUpEE3zW7qQBuIoIJWTjZM"
     headers = {
         # "accept": "application/json",
         "accept": "text/xml",
-        "Content-Type": "application/json",
+        "Content-Type": "text/xml",
         "Authorization": f"Bearer {token}"
     }
 
 
     url = "https://lbgsandbox.jamfcloud.com/JSSResource/policies/id/0"
-    target_fn = "out_policy.xml"
+    target_fn = "policy.xml"
     body = open(f"/Users/joseph/github/terraform-sandbox/go_testing/{target_fn}", "r")
     xml = body.read()
-    print(xml)
-    req = requests.request(method="POST", headers=headers, url=url, data=xml)
+    req = requests.request("POST", headers=headers, url=url, data=xml)
     print(req)
-    print(req.text)
+    if not req.ok:
+        print(req.text)
 
 
 main()
-
-
-
 
     # Lists available apps
     # req = requests.request("GET", url=url, headers=headers)

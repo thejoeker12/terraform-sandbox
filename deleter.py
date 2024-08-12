@@ -94,7 +94,7 @@ def execute(client):
     # print("deleting policies...")
     delete_all_policies(client, excluded_policies)
     # print("complete")
-    delete_all_categories(client, [5])
+    # delete_all_categories(client, [5, 7])
 
 def main():
     client = new_jamf_client()
