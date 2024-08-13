@@ -76,3 +76,8 @@ resource "jamfpro_category" "cats_helpers" {
   name = "Helpers"
   
 }
+
+import {
+  id = 163
+  to = jamfpro_category.testcat1
+}
