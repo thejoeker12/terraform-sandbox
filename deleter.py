@@ -1,8 +1,8 @@
 import sys
-sys.path.append("/Users/joseph/Github/jamfpi")
+sys.path.append("/Users/joseph/Github/jamfpy-python-sdk-jamfpro")
 
-# from ..jamfpi import jamfpi
-import jamfpi
+
+import jamfpy
 from pycookiecheat import chrome_cookies
 import logging
 from pprint import pprint
@@ -19,11 +19,11 @@ def getCurrentIngressCookie():
     return ""
 
 
-def new_jamf_client() -> jamfpi.JamfTenant:
+def new_jamf_client() -> jamfpy.JamfTenant:
     """Returns new jamf client using auth from file """
-    config = jamfpi.import_json("clientauth.json")
+    config = jamfpy.import_json("clientauth.json")
 
-    client = jamfpi.init_client(
+    client = jamfpy.init_client(
         tenant_name="lbgsandbox",
         client_id=config["clientId"],
         client_secret=config["clientSecret"],
@@ -37,7 +37,7 @@ def new_jamf_client() -> jamfpi.JamfTenant:
     return client
 
 
-def delete_all_policies(client: jamfpi.JamfTenant, exclude):
+def delete_all_policies(client: jamfpy.JamfTenant, exclude):
     all_policies = client.classic.policies.get_all()
 
     if all_policies.ok:
@@ -52,7 +52,7 @@ def delete_all_policies(client: jamfpi.JamfTenant, exclude):
                 print(f"Deleted {p['id']} successfully")
 
 
-def delete_all_computer_groups(client: jamfpi.JamfTenant, exclude: list):
+def delete_all_computer_groups(client: jamfpy.JamfTenant, exclude: list):
     all_resources = client.classic.computergroups.get_all()
 
     if all_resources.ok:
@@ -69,7 +69,7 @@ def delete_all_computer_groups(client: jamfpi.JamfTenant, exclude: list):
                 print(f"problem with {i['id']}, skipping...")
 
 
-def delete_all_categories(client: jamfpi.JamfTenant, exclude: list):
+def delete_all_categories(client: jamfpy.JamfTenant, exclude: list):
     all_resources = client.classic.categories.get_all()
 
     if all_resources.ok:
