@@ -1,57 +1,69 @@
 package main
 
 import (
-	"encoding/json"
-	"log"
-	"reflect"
+	"bytes"
+	"fmt"
+	"io"
+	"mime/multipart"
+	"net/http"
+	"os"
+	"path/filepath"
 )
 
-type Parent struct {
-	Key1 []Child
-	Key2 string
-	Key3 *Child
-}
-
-type Child struct {
-	CKey1 string
-}
-
 func main() {
-	obj1 := Parent{
-		Key1: []Child{
-			{
-				CKey1: "Cheese",
-			},
-			{
-				CKey1: "Ham",
-			},
-		},
+	url := "https://lbgsandbox.jamfcloud.com/api/v1/icon"
+	imagePath := "/Users/joseph/github/terraform-sandbox/go_testing/cat.png"
+
+	file, err := os.Open(imagePath)
+	if err != nil {
+		fmt.Println("Error opening file:", err)
+		return
+	}
+	defer file.Close()
+
+	var requestBody bytes.Buffer
+	multipartWriter := multipart.NewWriter(&requestBody)
+	fileWriter, err := multipartWriter.CreateFormFile("image", filepath.Base(imagePath))
+	if err != nil {
+		fmt.Println("Error creating form file:", err)
+		return
 	}
 
-	obj2 := Parent{}
-
-	marshalled1, _ := json.MarshalIndent(obj1, "", "	")
-	marshalled2, _ := json.MarshalIndent(obj2, "", "	")
-
-	log.Println("OBJ 1 - POPULATED:")
-	log.Printf("obj1: %+v", obj1)
-	log.Printf("obj1.Key1: %v", obj1.Key1)
-	log.Println(string(marshalled1))
-	log.Printf("reflect.TypeOf(&obj1.Key1): %v", reflect.TypeOf(&obj1.Key1))
-	log.Println("-----")
-	log.Println("OBJ 2 - EMPTY:")
-	log.Printf("obj2: %+v", obj2)
-	log.Printf("obj2.key1: %v", obj2.Key1)
-	log.Println(string(marshalled2))
-	log.Printf("rreflect.TypeOf(&obj2.Key1): %v", reflect.TypeOf(&obj2.Key1))
-
-	structs := []Parent{obj1, obj2}
-	for i, s := range structs {
-		if s.Key1 == nil {
-			log.Printf("Struct: %v key one is empty!", structs[i])
-		} else {
-			log.Printf("not empty!")
-		}
+	_, err = io.Copy(fileWriter, file)
+	if err != nil {
+		fmt.Println("Error copying file data:", err)
+		return
 	}
 
+	multipartWriter.Close()
+
+	req, err := http.NewRequest("POST", url, &requestBody)
+	if err != nil {
+		fmt.Println("Error creating request:", err)
+		return
+	}
+
+	req.Header.Set("accept", "application/json")
+	req.Header.Set("Content-Type", multipartWriter.FormDataContentType())
+	// req.Header.Set("Content-Type", "image/png")
+
+	token := os.Getenv("TOKEN")
+	req.Header.Set("Authorization", fmt.Sprintf("Bearer %s", token))
+
+	client := &http.Client{}
+	resp, err := client.Do(req)
+	if err != nil {
+		fmt.Println("Error sending request:", err)
+		return
+	}
+	defer resp.Body.Close()
+
+	// Read and print the response
+	body, err := io.ReadAll(resp.Body)
+	if err != nil {
+
+		fmt.Println("Error reading response:", err)
+		return
+	}
+	fmt.Println("Response:", string(body))
 }
