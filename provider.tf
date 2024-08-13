@@ -28,7 +28,7 @@ provider "jamfpro" {
   client_id                  = local.json_data.clientId
   client_secret              = local.json_data.clientSecret
   enable_client_sdk_logs     = true
-  client_sdk_log_export_path = "/Users/joseph/github/test.json"
+  client_sdk_log_export_path = "/Users/joseph/github/terraform-sandbox/test.txt"
   hide_sensitive_data        = true
   jamfpro_load_balancer_lock           = true
   token_refresh_buffer_period_seconds  = 300

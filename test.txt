@@ -1,0 +1,140 @@
+{"level":"warn","ts":1723556968.2513652,"caller":"jamfprointegration/auth.go:39","msg":"token empty before processing - disregard if first run"}
+{"level":"debug","ts":1723556968.251522,"caller":"jamfprointegration/auth_oauth.go:48","msg":"oauth endpoint constructed: https://lbgsandbox.jamfcloud.com/api/oauth/token"}
+{"level":"debug","ts":1723556968.251609,"caller":"jamfprointegration/auth_oauth.go:55","msg":"oauth token request constructed: &{Method:POST URL:https://lbgsandbox.jamfcloud.com/api/oauth/token Proto:HTTP/1.1 ProtoMajor:1 ProtoMinor:1 Header:map[] Body:{Reader:0x14000622480} GetBody:0x104778300 ContentLength:155 TransferEncoding:[] Close:false Host:lbgsandbox.jamfcloud.com Form:map[] PostForm:map[] MultipartForm:<nil> Trailer:map[] RemoteAddr: RequestURI: TLS:<nil> Cancel:<nil> Response:<nil> ctx:{emptyCtx:{}} pat:<nil> matches:[] otherValues:map[]}"}
+{"level":"info","ts":1723556968.4257421,"caller":"jamfprointegration/auth_oauth.go:95","msg":"Token obtained successfully","expiry":1723559967.425739}
+{"level":"debug","ts":1723556968.42593,"caller":"jamfprointegration/headers.go:36","msg":"Determining Content-Type for endpoint{endpoint 15 0 https://lbgsandbox.jamfcloud.com <nil>}"}
+{"level":"debug","ts":1723556968.425985,"caller":"jamfprointegration/preprequest.go:29","msg":"request headers added, refreshing token"}
+{"level":"debug","ts":1723556968.4260302,"caller":"jamfprointegration/preprequest.go:37","msg":"token refreshed, setting header"}
+{"level":"debug","ts":1723556968.426048,"caller":"jamfprointegration/preprequest.go:41","msg":"header added"}
+{"level":"debug","ts":1723556968.4441469,"caller":"jamfprointegration/headers.go:36","msg":"Determining Content-Type for endpoint{endpoint 15 0 https://lbgsandbox.jamfcloud.com <nil>}"}
+{"level":"debug","ts":1723556968.444263,"caller":"jamfprointegration/preprequest.go:29","msg":"request headers added, refreshing token"}
+{"level":"debug","ts":1723556968.444288,"caller":"jamfprointegration/preprequest.go:37","msg":"token refreshed, setting header"}
+{"level":"debug","ts":1723556968.4443069,"caller":"jamfprointegration/preprequest.go:41","msg":"header added"}
+{"level":"debug","ts":1723556968.464061,"caller":"jamfprointegration/headers.go:36","msg":"Determining Content-Type for endpoint{endpoint 15 0 https://lbgsandbox.jamfcloud.com <nil>}"}
+{"level":"debug","ts":1723556968.4643378,"caller":"jamfprointegration/preprequest.go:29","msg":"request headers added, refreshing token"}
+{"level":"debug","ts":1723556968.464364,"caller":"jamfprointegration/preprequest.go:37","msg":"token refreshed, setting header"}
+{"level":"debug","ts":1723556968.4643881,"caller":"jamfprointegration/preprequest.go:41","msg":"header added"}
+{"level":"debug","ts":1723556968.4800751,"caller":"jamfprointegration/headers.go:36","msg":"Determining Content-Type for endpoint{endpoint 15 0 https://lbgsandbox.jamfcloud.com <nil>}"}
+{"level":"debug","ts":1723556968.4801788,"caller":"jamfprointegration/preprequest.go:29","msg":"request headers added, refreshing token"}
+{"level":"debug","ts":1723556968.480208,"caller":"jamfprointegration/preprequest.go:37","msg":"token refreshed, setting header"}
+{"level":"debug","ts":1723556968.4802308,"caller":"jamfprointegration/preprequest.go:41","msg":"header added"}
+{"level":"debug","ts":1723556968.504468,"caller":"jamfprointegration/headers.go:36","msg":"Determining Content-Type for endpoint{endpoint 15 0 https://lbgsandbox.jamfcloud.com <nil>}"}
+{"level":"debug","ts":1723556968.504559,"caller":"jamfprointegration/preprequest.go:29","msg":"request headers added, refreshing token"}
+{"level":"debug","ts":1723556968.504586,"caller":"jamfprointegration/preprequest.go:37","msg":"token refreshed, setting header"}
+{"level":"debug","ts":1723556968.504609,"caller":"jamfprointegration/preprequest.go:41","msg":"header added"}
+{"level":"debug","ts":1723556968.5228329,"caller":"httpclient/client.go:118","msg":"validating configuration"}
+{"level":"debug","ts":1723556968.5229518,"caller":"httpclient/client.go:125","msg":"configuration valid"}
+{"level":"debug","ts":1723556968.522974,"caller":"httpclient/client.go:160","msg":"setting custom cookies"}
+{"level":"debug","ts":1723556968.5230231,"caller":"httpclient/cookies.go:10","msg":"cookie URL set globally to: %shttps://lbgsandbox.jamfcloud.com"}
+{"level":"debug","ts":1723556968.523078,"caller":"httpclient/cookies.go:18","msg":"[REDACTED] cookies set successfully"}
+{"level":"info","ts":1723556968.523108,"caller":"httpclient/client.go:164","msg":"client init complete: &{config:0x140002a7860 Integration:0x140002a7860 http:0x140002980b8 Sugar:0x14000298318 Concurrency:<nil>}"}
+{"level":"debug","ts":1723556968.5259478,"caller":"httpclient/request.go:213","msg":"Executing request without retries","method":"GET","endpoint":"/api/v1/categories/10"}
+{"level":"debug","ts":1723556968.526058,"caller":"jamfprointegration/headers.go:36","msg":"Determining Content-Type for endpoint{endpoint 15 0 https://lbgsandbox.jamfcloud.com/api/v1/categories/10 <nil>}"}
+{"level":"debug","ts":1723556968.526079,"caller":"jamfprointegration/headers.go:55","msg":"Content-Type for endpoint defaulting to JSON for JamfPro API","endpoint":"https://lbgsandbox.jamfcloud.com/api/v1/categories/10"}
+{"level":"debug","ts":1723556968.52614,"caller":"jamfprointegration/preprequest.go:29","msg":"request headers added, refreshing token"}
+{"level":"debug","ts":1723556968.526179,"caller":"jamfprointegration/preprequest.go:37","msg":"token refreshed, setting header"}
+{"level":"debug","ts":1723556968.526197,"caller":"jamfprointegration/preprequest.go:41","msg":"header added"}
+{"level":"debug","ts":1723556968.526029,"caller":"httpclient/request.go:213","msg":"Executing request without retries","method":"GET","endpoint":"/api/v1/scripts/7758"}
+{"level":"debug","ts":1723556968.526336,"caller":"jamfprointegration/headers.go:36","msg":"Determining Content-Type for endpoint{endpoint 15 0 https://lbgsandbox.jamfcloud.com/api/v1/scripts/7758 <nil>}"}
+{"level":"debug","ts":1723556968.526369,"caller":"jamfprointegration/headers.go:55","msg":"Content-Type for endpoint defaulting to JSON for JamfPro API","endpoint":"https://lbgsandbox.jamfcloud.com/api/v1/scripts/7758"}
+{"level":"debug","ts":1723556968.52639,"caller":"jamfprointegration/preprequest.go:29","msg":"request headers added, refreshing token"}
+{"level":"debug","ts":1723556968.5264041,"caller":"jamfprointegration/preprequest.go:37","msg":"token refreshed, setting header"}
+{"level":"debug","ts":1723556968.5264199,"caller":"jamfprointegration/preprequest.go:41","msg":"header added"}
+{"level":"debug","ts":1723556968.5259662,"caller":"httpclient/request.go:213","msg":"Executing request without retries","method":"GET","endpoint":"/api/v1/categories/9"}
+{"level":"debug","ts":1723556968.5265641,"caller":"jamfprointegration/headers.go:36","msg":"Determining Content-Type for endpoint{endpoint 15 0 https://lbgsandbox.jamfcloud.com/api/v1/categories/9 <nil>}"}
+{"level":"debug","ts":1723556968.5265899,"caller":"jamfprointegration/headers.go:55","msg":"Content-Type for endpoint defaulting to JSON for JamfPro API","endpoint":"https://lbgsandbox.jamfcloud.com/api/v1/categories/9"}
+{"level":"debug","ts":1723556968.5266051,"caller":"jamfprointegration/preprequest.go:29","msg":"request headers added, refreshing token"}
+{"level":"debug","ts":1723556968.526618,"caller":"jamfprointegration/preprequest.go:37","msg":"token refreshed, setting header"}
+{"level":"debug","ts":1723556968.526637,"caller":"jamfprointegration/preprequest.go:41","msg":"header added"}
+{"level":"debug","ts":1723556968.6196852,"caller":"httpclient/request.go:287","msg":"Request sent successfully{method 15 0 GET <nil>} {endpoint 15 0 /api/v1/categories/10 <nil>} {status_code 11 200  <nil>}"}
+{"level":"debug","ts":1723556968.619879,"caller":"httpclient/request.go:220","msg":"Status Code: 200"}
+{"level":"info","ts":1723556968.619922,"caller":"httpclient/request.go:226","msg":"GET request successful at https://lbgsandbox.jamfcloud.com/api/v1/categories/10"}
+{"level":"debug","ts":1723556968.6197078,"caller":"httpclient/request.go:287","msg":"Request sent successfully{method 15 0 GET <nil>} {endpoint 15 0 /api/v1/categories/9 <nil>} {status_code 11 200  <nil>}"}
+{"level":"debug","ts":1723556968.620058,"caller":"httpclient/request.go:220","msg":"Status Code: 200"}
+{"level":"info","ts":1723556968.620106,"caller":"httpclient/request.go:226","msg":"GET request successful at https://lbgsandbox.jamfcloud.com/api/v1/categories/9"}
+{"level":"info","ts":1723556968.6202629,"caller":"response/success.go:84","msg":"Successfully unmarshalled JSON response{content type 15 0 application/json <nil>}"}
+{"level":"debug","ts":1723556968.619756,"caller":"httpclient/request.go:287","msg":"Request sent successfully{method 15 0 GET <nil>} {endpoint 15 0 /api/v1/scripts/7758 <nil>} {status_code 11 200  <nil>}"}
+{"level":"debug","ts":1723556968.620383,"caller":"httpclient/request.go:220","msg":"Status Code: 200"}
+{"level":"info","ts":1723556968.6204102,"caller":"httpclient/request.go:226","msg":"GET request successful at https://lbgsandbox.jamfcloud.com/api/v1/scripts/7758"}
+{"level":"info","ts":1723556968.6206279,"caller":"response/success.go:84","msg":"Successfully unmarshalled JSON response{content type 15 0 application/json <nil>}"}
+{"level":"info","ts":1723556968.6202629,"caller":"response/success.go:84","msg":"Successfully unmarshalled JSON response{content type 15 0 application/json <nil>}"}
+{"level":"debug","ts":1723556968.639764,"caller":"httpclient/request.go:213","msg":"Executing request without retries","method":"GET","endpoint":"/JSSResource/policies/id/46"}
+{"level":"debug","ts":1723556968.639901,"caller":"jamfprointegration/headers.go:36","msg":"Determining Content-Type for endpoint{endpoint 15 0 https://lbgsandbox.jamfcloud.com/JSSResource/policies/id/46 <nil>}"}
+{"level":"debug","ts":1723556968.6399202,"caller":"jamfprointegration/headers.go:49","msg":"Content-Type for endpoint defaulting to XML for Classic API","endpoint":"https://lbgsandbox.jamfcloud.com/JSSResource/policies/id/46"}
+{"level":"debug","ts":1723556968.639938,"caller":"jamfprointegration/preprequest.go:29","msg":"request headers added, refreshing token"}
+{"level":"debug","ts":1723556968.6399539,"caller":"jamfprointegration/preprequest.go:37","msg":"token refreshed, setting header"}
+{"level":"debug","ts":1723556968.639969,"caller":"jamfprointegration/preprequest.go:41","msg":"header added"}
+{"level":"debug","ts":1723556968.7254121,"caller":"httpclient/request.go:287","msg":"Request sent successfully{method 15 0 GET <nil>} {endpoint 15 0 /JSSResource/policies/id/46 <nil>} {status_code 11 200  <nil>}"}
+{"level":"debug","ts":1723556968.7254798,"caller":"httpclient/request.go:220","msg":"Status Code: 200"}
+{"level":"info","ts":1723556968.7255008,"caller":"httpclient/request.go:226","msg":"GET request successful at https://lbgsandbox.jamfcloud.com/JSSResource/policies/id/46"}
+{"level":"info","ts":1723556968.726241,"caller":"response/success.go:95","msg":"Successfully unmarshalled XML response{content type 15 0 text/xml;charset=UTF-8 <nil>}"}
+{"level":"warn","ts":1723557003.0646431,"caller":"jamfprointegration/auth.go:39","msg":"token empty before processing - disregard if first run"}
+{"level":"debug","ts":1723557003.064708,"caller":"jamfprointegration/auth_oauth.go:48","msg":"oauth endpoint constructed: https://lbgsandbox.jamfcloud.com/api/oauth/token"}
+{"level":"debug","ts":1723557003.064744,"caller":"jamfprointegration/auth_oauth.go:55","msg":"oauth token request constructed: &{Method:POST URL:https://lbgsandbox.jamfcloud.com/api/oauth/token Proto:HTTP/1.1 ProtoMajor:1 ProtoMinor:1 Header:map[] Body:{Reader:0x1400007e4a0} GetBody:0x100a58300 ContentLength:155 TransferEncoding:[] Close:false Host:lbgsandbox.jamfcloud.com Form:map[] PostForm:map[] MultipartForm:<nil> Trailer:map[] RemoteAddr: RequestURI: TLS:<nil> Cancel:<nil> Response:<nil> ctx:{emptyCtx:{}} pat:<nil> matches:[] otherValues:map[]}"}
+{"level":"info","ts":1723557003.225323,"caller":"jamfprointegration/auth_oauth.go:95","msg":"Token obtained successfully","expiry":1723560002.2253199}
+{"level":"debug","ts":1723557003.225488,"caller":"jamfprointegration/headers.go:36","msg":"Determining Content-Type for endpoint{endpoint 15 0 https://lbgsandbox.jamfcloud.com <nil>}"}
+{"level":"debug","ts":1723557003.225545,"caller":"jamfprointegration/preprequest.go:29","msg":"request headers added, refreshing token"}
+{"level":"debug","ts":1723557003.225562,"caller":"jamfprointegration/preprequest.go:37","msg":"token refreshed, setting header"}
+{"level":"debug","ts":1723557003.225579,"caller":"jamfprointegration/preprequest.go:41","msg":"header added"}
+{"level":"debug","ts":1723557003.251265,"caller":"jamfprointegration/headers.go:36","msg":"Determining Content-Type for endpoint{endpoint 15 0 https://lbgsandbox.jamfcloud.com <nil>}"}
+{"level":"debug","ts":1723557003.2513762,"caller":"jamfprointegration/preprequest.go:29","msg":"request headers added, refreshing token"}
+{"level":"debug","ts":1723557003.2514,"caller":"jamfprointegration/preprequest.go:37","msg":"token refreshed, setting header"}
+{"level":"debug","ts":1723557003.251424,"caller":"jamfprointegration/preprequest.go:41","msg":"header added"}
+{"level":"debug","ts":1723557003.271859,"caller":"jamfprointegration/headers.go:36","msg":"Determining Content-Type for endpoint{endpoint 15 0 https://lbgsandbox.jamfcloud.com <nil>}"}
+{"level":"debug","ts":1723557003.271929,"caller":"jamfprointegration/preprequest.go:29","msg":"request headers added, refreshing token"}
+{"level":"debug","ts":1723557003.271948,"caller":"jamfprointegration/preprequest.go:37","msg":"token refreshed, setting header"}
+{"level":"debug","ts":1723557003.271968,"caller":"jamfprointegration/preprequest.go:41","msg":"header added"}
+{"level":"debug","ts":1723557003.293043,"caller":"jamfprointegration/headers.go:36","msg":"Determining Content-Type for endpoint{endpoint 15 0 https://lbgsandbox.jamfcloud.com <nil>}"}
+{"level":"debug","ts":1723557003.2931619,"caller":"jamfprointegration/preprequest.go:29","msg":"request headers added, refreshing token"}
+{"level":"debug","ts":1723557003.293186,"caller":"jamfprointegration/preprequest.go:37","msg":"token refreshed, setting header"}
+{"level":"debug","ts":1723557003.293204,"caller":"jamfprointegration/preprequest.go:41","msg":"header added"}
+{"level":"debug","ts":1723557003.3124108,"caller":"jamfprointegration/headers.go:36","msg":"Determining Content-Type for endpoint{endpoint 15 0 https://lbgsandbox.jamfcloud.com <nil>}"}
+{"level":"debug","ts":1723557003.312511,"caller":"jamfprointegration/preprequest.go:29","msg":"request headers added, refreshing token"}
+{"level":"debug","ts":1723557003.312555,"caller":"jamfprointegration/preprequest.go:37","msg":"token refreshed, setting header"}
+{"level":"debug","ts":1723557003.312587,"caller":"jamfprointegration/preprequest.go:41","msg":"header added"}
+{"level":"debug","ts":1723557003.3318,"caller":"httpclient/client.go:118","msg":"validating configuration"}
+{"level":"debug","ts":1723557003.331889,"caller":"httpclient/client.go:125","msg":"configuration valid"}
+{"level":"debug","ts":1723557003.3319108,"caller":"httpclient/client.go:160","msg":"setting custom cookies"}
+{"level":"debug","ts":1723557003.331938,"caller":"httpclient/cookies.go:10","msg":"cookie URL set globally to: %shttps://lbgsandbox.jamfcloud.com"}
+{"level":"debug","ts":1723557003.331968,"caller":"httpclient/cookies.go:18","msg":"[REDACTED] cookies set successfully"}
+{"level":"info","ts":1723557003.332001,"caller":"httpclient/client.go:164","msg":"client init complete: &{config:0x140003a75e0 Integration:0x140003a75e0 http:0x1400007c558 Sugar:0x1400007c340 Concurrency:<nil>}"}
+{"level":"debug","ts":1723557003.3359392,"caller":"httpclient/request.go:213","msg":"Executing request without retries","method":"GET","endpoint":"/api/v1/categories/9"}
+{"level":"debug","ts":1723557003.336076,"caller":"jamfprointegration/headers.go:36","msg":"Determining Content-Type for endpoint{endpoint 15 0 https://lbgsandbox.jamfcloud.com/api/v1/categories/9 <nil>}"}
+{"level":"debug","ts":1723557003.3360078,"caller":"httpclient/request.go:213","msg":"Executing request without retries","method":"GET","endpoint":"/api/v1/categories/10"}
+{"level":"debug","ts":1723557003.33619,"caller":"jamfprointegration/headers.go:36","msg":"Determining Content-Type for endpoint{endpoint 15 0 https://lbgsandbox.jamfcloud.com/api/v1/categories/10 <nil>}"}
+{"level":"debug","ts":1723557003.3363268,"caller":"jamfprointegration/headers.go:55","msg":"Content-Type for endpoint defaulting to JSON for JamfPro API","endpoint":"https://lbgsandbox.jamfcloud.com/api/v1/categories/10"}
+{"level":"debug","ts":1723557003.3361,"caller":"jamfprointegration/headers.go:55","msg":"Content-Type for endpoint defaulting to JSON for JamfPro API","endpoint":"https://lbgsandbox.jamfcloud.com/api/v1/categories/9"}
+{"level":"debug","ts":1723557003.336413,"caller":"jamfprointegration/preprequest.go:29","msg":"request headers added, refreshing token"}
+{"level":"debug","ts":1723557003.336461,"caller":"jamfprointegration/preprequest.go:37","msg":"token refreshed, setting header"}
+{"level":"debug","ts":1723557003.3364859,"caller":"jamfprointegration/preprequest.go:41","msg":"header added"}
+{"level":"debug","ts":1723557003.33642,"caller":"jamfprointegration/preprequest.go:29","msg":"request headers added, refreshing token"}
+{"level":"debug","ts":1723557003.33657,"caller":"jamfprointegration/preprequest.go:37","msg":"token refreshed, setting header"}
+{"level":"debug","ts":1723557003.336652,"caller":"jamfprointegration/preprequest.go:41","msg":"header added"}
+{"level":"debug","ts":1723557003.336185,"caller":"httpclient/request.go:213","msg":"Executing request without retries","method":"GET","endpoint":"/api/v1/scripts/7758"}
+{"level":"debug","ts":1723557003.336847,"caller":"jamfprointegration/headers.go:36","msg":"Determining Content-Type for endpoint{endpoint 15 0 https://lbgsandbox.jamfcloud.com/api/v1/scripts/7758 <nil>}"}
+{"level":"debug","ts":1723557003.336884,"caller":"jamfprointegration/headers.go:55","msg":"Content-Type for endpoint defaulting to JSON for JamfPro API","endpoint":"https://lbgsandbox.jamfcloud.com/api/v1/scripts/7758"}
+{"level":"debug","ts":1723557003.3369012,"caller":"jamfprointegration/preprequest.go:29","msg":"request headers added, refreshing token"}
+{"level":"debug","ts":1723557003.3369138,"caller":"jamfprointegration/preprequest.go:37","msg":"token refreshed, setting header"}
+{"level":"debug","ts":1723557003.33693,"caller":"jamfprointegration/preprequest.go:41","msg":"header added"}
+{"level":"debug","ts":1723557003.427852,"caller":"httpclient/request.go:287","msg":"Request sent successfully{method 15 0 GET <nil>} {endpoint 15 0 /api/v1/scripts/7758 <nil>} {status_code 11 200  <nil>}"}
+{"level":"debug","ts":1723557003.428007,"caller":"httpclient/request.go:220","msg":"Status Code: 200"}
+{"level":"info","ts":1723557003.4280589,"caller":"httpclient/request.go:226","msg":"GET request successful at https://lbgsandbox.jamfcloud.com/api/v1/scripts/7758"}
+{"level":"info","ts":1723557003.428324,"caller":"response/success.go:84","msg":"Successfully unmarshalled JSON response{content type 15 0 application/json <nil>}"}
+{"level":"debug","ts":1723557003.4294279,"caller":"httpclient/request.go:287","msg":"Request sent successfully{method 15 0 GET <nil>} {endpoint 15 0 /api/v1/categories/10 <nil>} {status_code 11 200  <nil>}"}
+{"level":"debug","ts":1723557003.4295151,"caller":"httpclient/request.go:220","msg":"Status Code: 200"}
+{"level":"info","ts":1723557003.429557,"caller":"httpclient/request.go:226","msg":"GET request successful at https://lbgsandbox.jamfcloud.com/api/v1/categories/10"}
+{"level":"info","ts":1723557003.429706,"caller":"response/success.go:84","msg":"Successfully unmarshalled JSON response{content type 15 0 application/json <nil>}"}
+{"level":"debug","ts":1723557003.430763,"caller":"httpclient/request.go:287","msg":"Request sent successfully{method 15 0 GET <nil>} {endpoint 15 0 /api/v1/categories/9 <nil>} {status_code 11 200  <nil>}"}
+{"level":"debug","ts":1723557003.43084,"caller":"httpclient/request.go:220","msg":"Status Code: 200"}
+{"level":"info","ts":1723557003.430866,"caller":"httpclient/request.go:226","msg":"GET request successful at https://lbgsandbox.jamfcloud.com/api/v1/categories/9"}
+{"level":"info","ts":1723557003.430902,"caller":"response/success.go:84","msg":"Successfully unmarshalled JSON response{content type 15 0 application/json <nil>}"}
+{"level":"debug","ts":1723557003.444528,"caller":"httpclient/request.go:213","msg":"Executing request without retries","method":"GET","endpoint":"/JSSResource/policies/id/46"}
+{"level":"debug","ts":1723557003.444652,"caller":"jamfprointegration/headers.go:36","msg":"Determining Content-Type for endpoint{endpoint 15 0 https://lbgsandbox.jamfcloud.com/JSSResource/policies/id/46 <nil>}"}
+{"level":"debug","ts":1723557003.44468,"caller":"jamfprointegration/headers.go:49","msg":"Content-Type for endpoint defaulting to XML for Classic API","endpoint":"https://lbgsandbox.jamfcloud.com/JSSResource/policies/id/46"}
+{"level":"debug","ts":1723557003.444698,"caller":"jamfprointegration/preprequest.go:29","msg":"request headers added, refreshing token"}
+{"level":"debug","ts":1723557003.444716,"caller":"jamfprointegration/preprequest.go:37","msg":"token refreshed, setting header"}
+{"level":"debug","ts":1723557003.444733,"caller":"jamfprointegration/preprequest.go:41","msg":"header added"}
+{"level":"debug","ts":1723557003.512407,"caller":"httpclient/request.go:287","msg":"Request sent successfully{method 15 0 GET <nil>} {endpoint 15 0 /JSSResource/policies/id/46 <nil>} {status_code 11 200  <nil>}"}
+{"level":"debug","ts":1723557003.512598,"caller":"httpclient/request.go:220","msg":"Status Code: 200"}
+{"level":"info","ts":1723557003.512635,"caller":"httpclient/request.go:226","msg":"GET request successful at https://lbgsandbox.jamfcloud.com/JSSResource/policies/id/46"}
+{"level":"info","ts":1723557003.514441,"caller":"response/success.go:95","msg":"Successfully unmarshalled XML response{content type 15 0 text/xml;charset=UTF-8 <nil>}"}
