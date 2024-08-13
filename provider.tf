@@ -30,10 +30,6 @@ provider "jamfpro" {
   enable_client_sdk_logs     = true
   client_sdk_log_export_path = "/Users/joseph/github/test.json"
   hide_sensitive_data        = true
-  custom_cookies {
-    name  = "cookie name"
-    value = "cookie value"
-  }
   jamfpro_load_balancer_lock           = true
   token_refresh_buffer_period_seconds  = 300
   mandatory_request_delay_milliseconds = 0
