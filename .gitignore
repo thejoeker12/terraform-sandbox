@@ -8,3 +8,5 @@ temp.text
 
 resource_names
 logs
+*.tfvars
+*.env
