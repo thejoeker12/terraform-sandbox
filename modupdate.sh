@@ -3,10 +3,10 @@ clear
 GIT_SEPARATOR="----------GIT----------"
 
 # Dir check
-dirProvider="/Users/joseph/github/terraform-provider-jamfpro"
-dirSdk="/Users/joseph/github/go-api-sdk-jamfpro"
-dirClient="/Users/joseph/github/go-api-http-client"
-dirIntegration="/Users/joseph/github/go-api-http-client-integrations"
+dirProvider="/Users/josephlittle/github/terraform-provider-jamfpro"
+dirSdk="/Users/josephlittle/github/go-api-sdk-jamfpro"
+dirClient="/Users/josephlittle/github/go-api-http-client"
+dirIntegration="/Users/josephlittle/github/go-api-http-client-integrations"
 directories=("$dirProvider" "$dirSdk" "$dirClient" "$dirIntegration")
 
 echo "checking dirs..."

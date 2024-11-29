@@ -31,3 +31,13 @@ json_data = resp.json()
 for i in json_data["results"]:
     sid = i["id"]
     print(CLIENT.pro.scripts.delete_by_id(sid))
+
+
+cats = CLIENT.classic.categories.get_all()
+print(cats.json())
+if not cats.ok:
+    exit(1)
+
+for i in cats.json()["categories"]:
+    cid = i["id"]
+    print(CLIENT.classic.categories.delete_by_id(cid))
