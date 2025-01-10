@@ -14,6 +14,7 @@ echo "rebuilding binary"
 go build
 
 echo "moving binary to plugins folder & adjusting permissions"
+mkdir -p ~/.terraform.d/plugins/terraform.local/local/jamfpro/0.1.0/darwin_arm64/
 mv terraform-provider-jamfpro ~/.terraform.d/plugins/terraform.local/local/jamfpro/0.1.0/darwin_arm64/
 chmod +x ~/.terraform.d/plugins/terraform.local/local/jamfpro/0.1.0/darwin_arm64/terraform-provider-jamfpro
 
@@ -21,3 +22,7 @@ echo "initiating terraform"
 cd ..
 cd terraform-sandbox
 terraform init
+
+# echo "Making plugins directory"
+# mkdir -p ~/.terraform.d/plugins/terraform.local/local/jamfpro/0.1.0/darwin_arm64/
+
