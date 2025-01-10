@@ -22,7 +22,3 @@ echo "initiating terraform"
 cd ..
 cd terraform-sandbox
 terraform init
-
-# echo "Making plugins directory"
-# mkdir -p ~/.terraform.d/plugins/terraform.local/local/jamfpro/0.1.0/darwin_arm64/
-
