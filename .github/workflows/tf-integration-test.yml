@@ -1,0 +1,20 @@
+name: "Github Actions Demo"
+on: [push]
+
+
+jobs:
+    Run-Integration-Test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: bobbyjameswilliams/terraform-provider-jamfpro/checkout@latest
+     with:
+        sparse-checkout: |
+        tests
+    
+    -uses: hashicorp/setup-terraform@v3
+
+    - name: Run Tests
+     run: terraform init
+     run: terraform test    
+        with:
+        path: tests/
