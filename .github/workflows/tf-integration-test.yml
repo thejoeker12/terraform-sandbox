@@ -24,6 +24,11 @@ jobs:
           jamfpro_mandatory_request_delay_milliseconds=${{ secrets.JAMFPRO_TOKEN_REFRESH_BUFFER_PERIOD_SECONDS }}
           EOF
 
+      - name: DEBUG
+        run: |
+          ls
+          cat terraform.tfvars
+
       - name: Run Tests
         run: |
           terraform init
