@@ -16,12 +16,12 @@ jobs:
       - name: Build TFVARS File
         run: |
           cat << EOF > terraform.tfvars
-          jamfpro_instance_fqdn = ${{ secrets.JAMFPRO_INSTANCE_FQDN }}
-          jamfpro_auth_method = ${{ secrets.JAMFPRO_AUTH_METHOD }}
-          jamfpro_client_id = ${{ secrets.JAMFPRO_CLIENT_ID }}
-          jamfpro_client_secret = ${{ secrets.JAMFPRO_CLIENT_ID }}
-          jamfpro_token_refresh_buffer_period_seconds = ${{ secrets.JAMFPRO_MANDATORY_REQUEST_DELAY_MILLISECONDS }}
-          jamfpro_mandatory_request_delay_milliseconds = ${{ secrets.JAMFPRO_TOKEN_REFRESH_BUFFER_PERIOD_SECONDS }}
+          jamfpro_instance_fqdn=${{ secrets.JAMFPRO_INSTANCE_FQDN }}
+          jamfpro_auth_method=${{ secrets.JAMFPRO_AUTH_METHOD }}
+          jamfpro_client_id=${{ secrets.JAMFPRO_CLIENT_ID }}
+          jamfpro_client_secret=${{ secrets.JAMFPRO_CLIENT_ID }}
+          jamfpro_token_refresh_buffer_period_seconds=${{ secrets.JAMFPRO_MANDATORY_REQUEST_DELAY_MILLISECONDS }}
+          jamfpro_mandatory_request_delay_milliseconds=${{ secrets.JAMFPRO_TOKEN_REFRESH_BUFFER_PERIOD_SECONDS }}
           EOF
 
       - name: Run Tests
