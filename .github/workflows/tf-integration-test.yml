@@ -5,6 +5,7 @@ on:
 
 jobs:
   Run-Integration-Test:
+    environment: terraform-integration-testing
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
