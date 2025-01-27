@@ -32,5 +32,6 @@ jobs:
 
       - name: Run Tests
         run: |
+          terraform fmt
           terraform init
           terraform test
