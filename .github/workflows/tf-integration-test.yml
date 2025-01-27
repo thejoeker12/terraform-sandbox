@@ -23,6 +23,7 @@ jobs:
           jamfpro_token_refresh_buffer_period_seconds=${{ secrets.JAMFPRO_MANDATORY_REQUEST_DELAY_MILLISECONDS }}
           jamfpro_mandatory_request_delay_milliseconds=${{ secrets.JAMFPRO_TOKEN_REFRESH_BUFFER_PERIOD_SECONDS }}
           EOF
+          terraform fmt
 
       - name: DEBUG
         run: |
