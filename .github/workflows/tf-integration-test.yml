@@ -1,0 +1,32 @@
+name: "Terraform Integration Tests"
+run-name: "Terraform Integration Tests"
+on:
+  workflow_dispatch:
+
+jobs:
+  Run-Integration-Test:
+    environment: terraform-integration-testing
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4.2.2
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v3
+      
+      - name: Build TFVARS File
+        run: |
+          cat << EOF > terraform.tfvars
+          jamfpro_instance_fqdn="${{ secrets.JAMFPRO_INSTANCE_FQDN }}"
+          jamfpro_auth_method="${{ secrets.JAMFPRO_AUTH_METHOD }}"
+          jamfpro_client_id="${{ secrets.JAMFPRO_CLIENT_ID }}"
+          jamfpro_client_secret="${{ secrets.JAMFPRO_CLIENT_SECRET }}"
+          jamfpro_token_refresh_buffer_period_seconds=${{ secrets.JAMFPRO_MANDATORY_REQUEST_DELAY_MILLISECONDS }}
+          jamfpro_mandatory_request_delay_milliseconds=${{ secrets.JAMFPRO_TOKEN_REFRESH_BUFFER_PERIOD_SECONDS }}
+          EOF
+
+      - name: Run Tests
+        run: |
+          terraform fmt
+          terraform init
+          terraform test
