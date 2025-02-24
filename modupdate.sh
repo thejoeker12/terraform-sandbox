@@ -6,10 +6,10 @@ GIT_SEPARATOR="----------GIT----------"
 
 cd ..
 repo_dir=$(pwd)
-dirProvider="$(repo_dir)/terraform-provider-jamfpro"
-dirSdk="$(repo_dir)/go-api-sdk-jamfpro"
-dirClient="$(repo_dir)/go-api-http-client"
-dirIntegration="$(repo_dir)/go-api-http-client-integrations"
+dirProvider="${repo_dir}/terraform-provider-jamfpro"
+dirSdk="${repo_dir}/go-api-sdk-jamfpro"
+dirClient="${repo_dir}/go-api-http-client"
+dirIntegration="${repo_dir}/go-api-http-client-integrations"
 directories=("$dirProvider" "$dirSdk" "$dirClient" "$dirIntegration")
 
 echo "checking dirs..."
