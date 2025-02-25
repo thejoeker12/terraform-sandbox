@@ -28,7 +28,7 @@ ghIntegration="github.com/deploymenttheory/go-api-http-client-integrations"
 
 TARGET_BRANCH_SDK="latest"
 TARGET_BRANCH_HTTP_CLIENT="latest"
-TARGET_BRANCH_INTEGRATION="latest"
+TARGET_BRANCH_INTEGRATION="dev/bobby"
 
 GH_SDK="$ghSdk@$TARGET_BRANCH_SDK"
 GH_CLIENT="$ghClient@$TARGET_BRANCH_HTTP_CLIENT"
