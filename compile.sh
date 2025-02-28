@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # LOCAL_PROVIDER_ENVIRONMENT will be the architecture of your machine, eg linux_amd64, darwin_arm64 etc
+working_directory=$(pwd) 
 echo "sourcing .env file..."
 . ./.env
 
@@ -25,6 +26,5 @@ mv terraform-provider-jamfpro ~/.terraform.d/plugins/terraform.local/local/jamfp
 chmod +x ~/.terraform.d/plugins/terraform.local/local/jamfpro/0.1.0/$LOCAL_PROVIDER_ENVIRONMENT/terraform-provider-jamfpro
 
 echo "initiating terraform"
-cd ..
-cd terraform-provider-jamfpro-testing
+cd $working_directory
 terraform init

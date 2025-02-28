@@ -1,0 +1,9 @@
+{"level":"debug","ts":1740668599.46095,"caller":"jamfprointegration/load_balancer_workaround.go:53","msg":"Starting cookie magic (has this propogated?)"}
+{"level":"debug","ts":1740668599.640812,"caller":"jamfprointegration/load_balancer_workaround.go:112","msg":"### COMPLETED COOKIE MAGIC ### Dupes removed: [9a794a6f22fea3b1 5bf83a2221cfb9af], outlist: [9a794a6f22fea3b1 5bf83a2221cfb9af]"}
+{"level":"debug","ts":1740668599.640895,"caller":"jamfprointegration/load_balancer_workaround.go:30","msg":"Chosen Cookie:9a794a6f22fea3b1 "}
+{"level":"debug","ts":1740668601.13107,"caller":"jamfprointegration/load_balancer_workaround.go:53","msg":"Starting cookie magic (has this propogated?)"}
+{"level":"debug","ts":1740668601.269515,"caller":"jamfprointegration/load_balancer_workaround.go:112","msg":"### COMPLETED COOKIE MAGIC ### Dupes removed: [9a794a6f22fea3b1 5bf83a2221cfb9af], outlist: [9a794a6f22fea3b1 5bf83a2221cfb9af]"}
+{"level":"debug","ts":1740668601.269599,"caller":"jamfprointegration/load_balancer_workaround.go:30","msg":"Chosen Cookie:9a794a6f22fea3b1 "}
+{"level":"debug","ts":1740668601.6490612,"caller":"jamfprointegration/load_balancer_workaround.go:53","msg":"Starting cookie magic (has this propogated?)"}
+{"level":"debug","ts":1740668601.817021,"caller":"jamfprointegration/load_balancer_workaround.go:112","msg":"### COMPLETED COOKIE MAGIC ### Dupes removed: [9a794a6f22fea3b1 5bf83a2221cfb9af], outlist: [9a794a6f22fea3b1 9a794a6f22fea3b1 5bf83a2221cfb9af]"}
+{"level":"debug","ts":1740668601.8173351,"caller":"jamfprointegration/load_balancer_workaround.go:30","msg":"Chosen Cookie:9a794a6f22fea3b1 "}
