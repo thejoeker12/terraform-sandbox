@@ -10,3 +10,4 @@ resource_names
 logs
 *.tfvars
 *.env
+.venv

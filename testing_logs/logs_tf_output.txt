@@ -1,0 +1,1 @@
+./debug-cookie-test.sh: 25: auto-approve: not found
