@@ -15,17 +15,18 @@ instance = jamfpy.Tenant(
     token_exp_threshold_mins=1
 )
 
-# resp = instance.classic.scripts.get_all()
-# resp.raise_for_status()
-# all_scripts = resp.json()["scripts"]
-# for i in all_scripts:
-#     del_resp = instance.classic.scripts.delete_by_id(i["id"])
-#     print(del_resp.text)
-
-resp = instance.classic.computer_extension_attributes.get_all()
+resp = instance.classic.scripts.get_all()
 resp.raise_for_status()
-all_scripts = resp.json()["computer_extension_attributes"]
+all_scripts = resp.json()["scripts"]
 for i in all_scripts:
-    del_resp = instance.classic.computer_extension_attributes.delete(i["id"])
+    del_resp = instance.classic.scripts.delete_by_id(i["id"])
     print(del_resp.text)
-print(all_scripts)
+
+
+# resp = instance.classic.computer_extension_attributes.get_all()
+# resp.raise_for_status()
+# all_scripts = resp.json()["computer_extension_attributes"]
+# for i in all_scripts:
+#     del_resp = instance.classic.computer_extension_attributes.delete(i["id"])
+#     print(del_resp.text)
+# print(all_scripts)

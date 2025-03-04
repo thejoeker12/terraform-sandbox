@@ -1,5 +1,5 @@
 jamftf_target_version=dev
-jamfpy_target_version=main
+jamfpy_target_version=dev
 
 ########
 jamftf_url="https://github.com/deploymenttheory/jamftf-python-terraform-importer"

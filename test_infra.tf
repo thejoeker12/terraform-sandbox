@@ -22,20 +22,20 @@
 #   parameter11 = "parametee11_field"
 # }
 
-# resource "jamfpro_script" "script1" {
-#   count = 1000
-#   name = "tf-testing-local-jl-${count.index}"
-#   script_contents = "echo hello world"
-#   priority = "BEFORE"
-# }
+resource "jamfpro_script" "script1" {
+  count = 10
+  name = "tf-testing-local-jl-${count.index}"
+  script_contents = "echo hello world"
+  priority = "BEFORE"
+}
 
-# resource "jamfpro_building" "building1" {
-#   count = 1000
-#   name = "tf-testing-local-bw-${count.index}"
-# }
+resource "jamfpro_building" "building1" {
+  count = 10
+  name = "tf-testing-local-bw-${count.index}"
+}
 
 resource "jamfpro_computer_extension_attribute" "jamfpro_computer_extension_attribute_popup_menu_1" {
-  count = 500
+  count = 10
   name                   = "tf-testing-local-bw-${count.index}"
   enabled                = true
   description            = "An attribute collected from a pop-up menu."

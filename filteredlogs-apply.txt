@@ -1,0 +1,6 @@
+{"level":"debug","ts":1741098229.4121559,"caller":"jamfprointegration/load_balancer_workaround.go:51","msg":"Starting load balancer workaround"}
+{"level":"debug","ts":1741098229.5895429,"caller":"jamfprointegration/load_balancer_workaround.go:101","msg":"### COMPLETED LOADBALANCER WORKAROUND ### Dupes removed: [b2ae299329acb79b 75a37a27ad6673ed], outlist: [b2ae299329acb79b b2ae299329acb79b 75a37a27ad6673ed]"}
+{"level":"debug","ts":1741098229.589719,"caller":"jamfprointegration/load_balancer_workaround.go:29","msg":"Chosen Cookie:75a37a27ad6673ed "}
+{"level":"debug","ts":1741098229.882706,"caller":"jamfprointegration/load_balancer_workaround.go:51","msg":"Starting load balancer workaround"}
+{"level":"debug","ts":1741098230.04477,"caller":"jamfprointegration/load_balancer_workaround.go:101","msg":"### COMPLETED LOADBALANCER WORKAROUND ### Dupes removed: [b2ae299329acb79b 75a37a27ad6673ed], outlist: [b2ae299329acb79b b2ae299329acb79b 75a37a27ad6673ed]"}
+{"level":"debug","ts":1741098230.0450718,"caller":"jamfprointegration/load_balancer_workaround.go:29","msg":"Chosen Cookie:75a37a27ad6673ed "}
