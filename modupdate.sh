@@ -1,7 +1,3 @@
-clear
-
-GIT_SEPARATOR="----------GIT----------"
-
 # Dir check
 dirProvider="/Users/josephlittle/github/terraform-provider-jamfpro"
 dirSdk="/Users/josephlittle/github/go-api-sdk-jamfpro"
@@ -57,18 +53,16 @@ GH_INTEGRATION="$ghIntegration@$TARGET_BRANCH_INTEGRATION"
 
 # Mod dependency updates
 
+go clean --cache
 
 echo "updating sdk modules..."
 cd $dirSdk
-go clean --cache
 GOPROXY=direct go get -u $GH_CLIENT
 GOPROXY=direct go get -u $GH_INTEGRATION
 go mod tidy
 
-
 echo "updating provider modules..."
 cd $dirProvider
-go clean --cache
 GOPROXY=direct go get -u $GH_SDK
 GOPROXY=direct go get -u $GH_CLIENT
 GOPROXY=direct go get -u $GH_INTEGRATION
@@ -76,7 +70,6 @@ go mod tidy
 
 echo "updating integration modules..."
 cd $dirIntegration
-go clean --cache
 GOPROXY=direct go get -u $GH_CLIENT
 go mod tidy
 

@@ -1,5 +1,5 @@
 resource "jamfpro_script" "script1" {
-  count = 10
+  count = 1
   name = "tf-testing-local-jl-${count.index}"
   script_contents = "echo hello world"
   priority = "BEFORE"
