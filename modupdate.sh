@@ -73,4 +73,10 @@ cd $dirIntegration
 GOPROXY=direct go get -u $GH_CLIENT
 go mod tidy
 
+
+echo "updating test env"
+cd /Users/josephlittle/Github/terraform-sandbox/go_testing/
+GOPROXY=direct go get -u $GH_SDK
+go mod tidy
+
 echo "done"

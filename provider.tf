@@ -46,7 +46,7 @@ variable "jamfpro_client_secret" {
 variable "enable_client_sdk_logs" {
   description = "Enable client SDK logs."
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "client_sdk_log_export_path" {
