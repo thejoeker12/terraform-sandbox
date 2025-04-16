@@ -3,9 +3,10 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"log"
 	"net/http"
+	"net/url"
 	"os"
+	"reflect"
 	"time"
 
 	"github.com/deploymenttheory/go-api-http-client-integrations/jamf/jamfprointegration"
@@ -16,10 +17,6 @@ import (
 
 const FQDN string = "https://lbgsandbox.jamfcloud.com"
 const hidesensitive bool = true
-const pkgPaths string = "/Users/josephlittle/Github/packages/"
-const pkgChrome string = "googlechrome.dmg"
-const pkgSus string = "sus_package.dmg"
-const bigmomma string = "bigfile.dmg"
 
 var CLIENT_ID string = os.Getenv("jamfpro_client_id")
 var CLIENT_SECRET string = os.Getenv("jamfpro_client_secret")
@@ -66,43 +63,35 @@ func main() {
 		HTTP: builtClient,
 	}
 
-	fullPath := fmt.Sprintf("%s%s", pkgPaths, bigmomma)
+	filter := url.Values{}
 
-	pkgMetadata := jamfpro.ResourcePackage{
-		PackageName:          bigmomma,
-		FileName:             bigmomma,
-		CategoryID:           "-1",
-		Priority:             3,
-		FillUserTemplate:     BoolPtr(false),
-		RebootRequired:       BoolPtr(false),
-		OSInstall:            BoolPtr(false),
-		SuppressUpdates:      BoolPtr(false),
-		SuppressFromDock:     BoolPtr(false),
-		SuppressEula:         BoolPtr(false),
-		SuppressRegistration: BoolPtr(false),
-	}
+	filter.Add("page-size", "1")
 
-	resp_meta, err := jp.CreatePackage(pkgMetadata)
-	if err != nil {
-		fmt.Printf("Error creating package manifest: %+v", err)
-		return
-	}
+	cats, err := jp.GetCategories(filter)
 
-	jp.HTTP.ModifyHttpTimeout(100 * time.Minute)
-	_, err = jp.UploadPackage(resp_meta.ID, []string{fullPath})
+	// cats, err := jp.DoPaginatedGet("/api/v1/categories", 1, 0, filter)
 
 	if err != nil {
-		fmt.Println(err)
+		fmt.Printf("error: %v", err)
+		os.Exit(1)
 	}
 
-	packageJSON, err := json.MarshalIndent(resp_meta, "", "    ") // Indent with 4 spaces
+	jsonData, err := json.MarshalIndent(cats, " ", "	")
 	if err != nil {
-		log.Fatalf("Error marshaling created package data: %v", err)
+		fmt.Printf("error marshalling: %v", err)
+		os.Exit(1)
 	}
-	fmt.Println("Created Package Details:\n", string(packageJSON))
+
+	fmt.Println(string(jsonData))
+	fmt.Println(reflect.TypeOf(cats.Results))
 }
 
-// BoolPtr is a helper function to create a pointer to a bool.
-func BoolPtr(b bool) *bool {
-	return &b
-}
+// func main() {
+// 	params := url.Values{}
+// 	params.Add("filter", `name=="apps*"`)
+
+// 	uri := params.Encode()
+
+// 	fmt.Println(uri)
+
+// }

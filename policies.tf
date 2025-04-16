@@ -1,6 +1,6 @@
 resource "jamfpro_policy" "jamfpro_policy_001" {
-  count = 25
-  name                          = "tf-jl-fixing-bad-defaults-${count.index}"
+  count = 1
+  name                          = "tf-jl-testing-${count.index}"
   enabled                       = false
   trigger_checkin               = false
   trigger_enrollment_complete   = false
@@ -21,12 +21,12 @@ resource "jamfpro_policy" "jamfpro_policy_001" {
     all_computers = false
     all_jss_users = false
 
-    computer_ids       = []
-    computer_group_ids = []
-    building_ids       = []
-    department_ids     = []
-    jss_user_ids       = []
-    jss_user_group_ids = []
+    computer_ids       = ["16.19", 17]
+    # computer_group_ids = []
+    # building_ids       = []
+    # department_ids     = []
+    # jss_user_ids       = []
+    # jss_user_group_ids = []
 
   }
 
@@ -62,7 +62,7 @@ resource "jamfpro_policy" "jamfpro_policy_001" {
 }
 
 resource "jamfpro_script" "test-payload-script" {
-    name = "test-script-payload"
+    name = "test-script-payload-3"
     script_contents = "hello world"
     priority = "BEFORE"
 
