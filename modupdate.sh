@@ -1,6 +1,6 @@
 # Dir check
 dirProvider="/Users/josephlittle/github/terraform-provider-jamfpro"
-dirSdk="/Users/josephlittle/github/go-api-sdk-jamfpro"
+dirSdk="/Users/josephlittle/github/go-api-sdk-jamfpro-1"
 dirClient="/Users/josephlittle/github/go-api-http-client"
 dirIntegration="/Users/josephlittle/github/go-api-http-client-integrations"
 directories=("$dirProvider" "$dirSdk" "$dirClient" "$dirIntegration")
@@ -19,7 +19,7 @@ ghSdk="github.com/deploymenttheory/go-api-sdk-jamfpro"
 ghClient="github.com/deploymenttheory/go-api-http-client"
 ghIntegration="github.com/deploymenttheory/go-api-http-client-integrations"
 
-TARGET_BRANCH_SDK="dev-pagination"
+TARGET_BRANCH_SDK="latest"
 TARGET_BRANCH_HTTP_CLIENT="latest"
 TARGET_BRANCH_INTEGRATION="latest"
 

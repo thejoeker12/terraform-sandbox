@@ -4,9 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"net/url"
 	"os"
-	"reflect"
 	"time"
 
 	"github.com/deploymenttheory/go-api-http-client-integrations/jamf/jamfprointegration"
@@ -23,7 +21,7 @@ var CLIENT_SECRET string = os.Getenv("jamfpro_client_secret")
 
 func main() {
 
-	loggerConfig := zap.NewDevelopmentConfig()
+	loggerConfig := zap.NewProductionConfig()
 	logger, _ := loggerConfig.Build()
 	sugar := logger.Sugar()
 
@@ -36,6 +34,16 @@ func main() {
 		hidesensitive,
 		http.Client{},
 	)
+
+	// jamfproIntegration, err := jamfprointegration.BuildWithBasicAuth(
+	// 	FQDN,
+	// 	sugar,
+	// 	20*time.Second,
+	// 	"joseph.little",
+	// 	"Tokyo2023!JL",
+	// 	hidesensitive,
+	// 	http.Client{},
+	// )
 
 	if err != nil {
 		fmt.Println(err)
@@ -63,35 +71,20 @@ func main() {
 		HTTP: builtClient,
 	}
 
-	filter := url.Values{}
-
-	filter.Add("page-size", "1")
-
-	cats, err := jp.GetCategories(filter)
-
-	// cats, err := jp.DoPaginatedGet("/api/v1/categories", 1, 0, filter)
+	resp, err := jp.GetComputerPrestageByID("118")
 
 	if err != nil {
-		fmt.Printf("error: %v", err)
+		fmt.Println(err)
 		os.Exit(1)
 	}
 
-	jsonData, err := json.MarshalIndent(cats, " ", "	")
+	jsonData, err := json.MarshalIndent(resp, " ", "	")
+
 	if err != nil {
-		fmt.Printf("error marshalling: %v", err)
+		fmt.Println(err)
 		os.Exit(1)
 	}
 
 	fmt.Println(string(jsonData))
-	fmt.Println(reflect.TypeOf(cats.Results))
+
 }
-
-// func main() {
-// 	params := url.Values{}
-// 	params.Add("filter", `name=="apps*"`)
-
-// 	uri := params.Encode()
-
-// 	fmt.Println(uri)
-
-// }
