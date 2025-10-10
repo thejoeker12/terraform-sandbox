@@ -1,6 +1,6 @@
 # Dir check
 dirProvider="/Users/josephlittle/github/terraform-provider-jamfpro"
-dirSdk="/Users/josephlittle/github/go-api-sdk-jamfpro-1"
+dirSdk="/Users/josephlittle/github/go-api-sdk-jamfpro"
 dirClient="/Users/josephlittle/github/go-api-http-client"
 dirIntegration="/Users/josephlittle/github/go-api-http-client-integrations"
 directories=("$dirProvider" "$dirSdk" "$dirClient" "$dirIntegration")
