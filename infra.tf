@@ -1,38 +1,13 @@
-locals {
-  cheese = "Cake"
-}
 
-resource "jamfpro_app_installer" "jamfpro_app_installer_001" {
-
-  name            = "010 Editor"
-  app_title_name  = "010 Editor"
-  enabled         = true
-  deployment_type = "SELF_SERVICE"
-  update_behavior = "AUTOMATIC"
-  category_id     = "-1"
-  site_id         = "-1"
-  smart_group_id  = "1"
-
-  install_predefined_config_profiles = false
-  trigger_admin_notifications        = false
-
-  %{if contains(local.cheese, "cake")}
-  notification_settings {
-    notification_message  = "A new update is available"
-    notification_interval = 1
-    deadline_message      = "Update deadline approaching"
-    deadline              = 1
-    quit_delay            = 1
-    complete_message      = "Update completed successfully"
-    relaunch              = true
-    suppress              = false
-  }
-  %{endif}
-
-  self_service_settings {
-    include_in_featured_category   = true
-    include_in_compliance_category = true
-    force_view_description         = true
-    description                    = "This is an example app deployment"
-  }
+module "hackathon" {
+  source                                       = "./hackathon"
+  jamfpro_client_id                            = var.jamfpro_client_id
+  jamfpro_client_secret                        = var.jamfpro_client_secret
+  jamfpro_auth_method                          = var.jamfpro_auth_method
+  jamfpro_custom_cookies                       = var.jamfpro_custom_cookies
+  jamfpro_hide_sensitive_data                  = var.jamfpro_hide_sensitive_data
+  jamfpro_instance_fqdn                        = var.jamfpro_instance_fqdn
+  jamfpro_load_balancer_lock                   = var.jamfpro_load_balancer_lock
+  jamfpro_mandatory_request_delay_milliseconds = var.jamfpro_mandatory_request_delay_milliseconds
+  jamfpro_token_refresh_buffer_period_seconds  = var.jamfpro_token_refresh_buffer_period_seconds
 }
