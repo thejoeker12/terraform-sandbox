@@ -1,5 +1,5 @@
 
 
 variable "team-prefix" {
-    type = string
+  type = string
 }

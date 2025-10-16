@@ -94,7 +94,7 @@ locals {
 }
 
 resource "jamfpro_building" "buildings" {
-  for_each = local.famous_buildings
+  for_each        = local.famous_buildings
   name            = "${var.team-prefix}-${each.value.name}"
   street_address1 = each.value.street_address1
   street_address2 = each.value.street_address2
