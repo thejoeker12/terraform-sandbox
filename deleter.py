@@ -12,7 +12,7 @@ def getCurrentIngressCookie():
     if len(cookies) != 0:
         ingress_cookie = cookies["jpro-ingress"]
         return ingress_cookie
-    
+
     return ""
 
 CLIENT = jamfpy.init_client(
