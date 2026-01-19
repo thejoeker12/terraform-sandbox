@@ -1,9 +1,15 @@
 terraform {
   required_providers {
+    # jamfpro = {
+    #   source  = "deploymenttheory/jamfpro"
+    #   version = "0.30.0"
+    # }
+
     jamfpro = {
-      source  = "deploymenttheory/jamfpro"
-      version = "0.26.0"
+      source  = "terraform.local/local/jamfpro"
+      version = "0.1.0"
     }
+
   }
 }
 
@@ -67,13 +73,18 @@ variable "jamfpro_custom_cookies" {
     name  = string
     value = string
   }))
-  default = []
+  default = [
+    {
+      name  = "jpro-ingress",
+      value = "46f204ded2bd8961"
+    }
+  ]
 }
 
 variable "jamfpro_load_balancer_lock" {
   description = "Programmatically determines all available web app members in the load balancer and locks all instances of httpclient to the app for faster executions."
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "jamfpro_token_refresh_buffer_period_seconds" {
